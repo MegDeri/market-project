@@ -1,0 +1,42 @@
+{
+  "name": "market-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p -l start:*",
+    "start:server": "cd server && node server.js",
+    "start:client": "cd client && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegDeri/market-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MegDeri/market-project/issues"
+  },
+  "homepage": "https://github.com/MegDeri/market-project#readme",
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0",
+    "autoprefixer": "^9.6.4",
+    "bootstrap": "^4.3.1",
+    "chalk": "^2.4.2",
+    "classnames": "^2.2.6",
+    "css-loader": "^3.2.0",
+    "npm-run-all": "4.1.5",
+    "sass-loader": "^8.0.0",
+    "sharp": "^0.23.1",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "file-loader": "^4.2.0",
+    "husky": "^3.0.8"
+  }
+}
