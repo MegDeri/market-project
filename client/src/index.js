@@ -1,11 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import App from './App';
 import './styles/global.scss';
+//import 'animate.css/animate.min.css';
+import { BrowserRouter } from "react-router-dom";
 
-//function component
+
+
 const Root = () => (
-     <App/>
-)
+    <BrowserRouter>
+        <App/> 
+    </BrowserRouter>
+  );
+
+const rootElement = document.getElementById('root');
    
-ReactDOM.render(<Root/>, document.getElementById('root'));
+render(<Root/>, rootElement );
