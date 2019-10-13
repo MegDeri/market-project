@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-transform: uppercase;
+}
+
+.navMain {
+    border-bottom: 1px solid $color-text-light;
+}

@@ -1,7 +1,9 @@
 import React from "react";
 
-export class Product extends React.Component {
+export class Product  extends React.Component  {
   render() {
-    return <div>Product</div>;
+      return (
+        <div>Product </div>
+      )
   }
 }
