@@ -1,6 +1,8 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
 
+import ProductsList from './ProductsList';
+
 export class Products extends React.Component  {
 
   componentDidMount() {
@@ -12,11 +14,8 @@ export class Products extends React.Component  {
     const { products } = this.props;
       return (
         <div>
-        Products
-        <ul>
-          {products.map(product => <li key={product.id}>{product.title}</li>)}
-        </ul>
-      </div>
+          <ProductsList products={products} />
+        </div>
       )
   }
 }
