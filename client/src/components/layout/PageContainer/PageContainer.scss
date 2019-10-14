@@ -1,0 +1,9 @@
+@import '../../../styles/settings.scss';
+
+.container-fluid {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: $base-size $base-size * 2;
+}

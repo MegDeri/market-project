@@ -5,7 +5,7 @@ import  { MainLayout } from './components/layout/MainLayout/MainLayout';
 
 //import routes
 import { Home } from './components/pages/Home/Home';
-import { Products } from './components/pages/Product/Products';
+import  Products from './components/pages/Product/ProductsContainer';
 import { Product } from './components/pages/Product/Product';
 import { ContactPage } from './components/pages/Contact/ContactPage';
 import { NotFoundPage } from './components/pages/NotFound/NotFoundPage';
