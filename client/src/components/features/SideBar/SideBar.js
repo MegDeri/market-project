@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Button } from 'reactstrap';
+import './SideBar.scss'
 
 export class SideBar extends React.Component  {
     render() {

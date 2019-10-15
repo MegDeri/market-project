@@ -1,5 +1,7 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'reactstrap';
 
 import Button from '../../common/Button/Button';
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
@@ -11,13 +13,15 @@ export class Product  extends React.Component  {
     const { id, title, content } = this.props;
       
     return (
-        <article className="product-summary">
+        <Col className="product-summary" xs={6}>
+          
           <SmallTitle>{title}</SmallTitle>
           <HtmlBox>{content}</HtmlBox>
           <Button variant="primary">
             Add to cart
           </Button>
-        </article>
+        
+        </Col>
       )
   }
 }

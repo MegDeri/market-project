@@ -1,6 +1,5 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
-
 import ProductsList from './ProductsList';
 
 export class Products extends React.Component  {
@@ -13,8 +12,11 @@ export class Products extends React.Component  {
   render() {
     const { products } = this.props;
       return (
-        <div>
+        
+          <div>
+          
           <ProductsList products={products} />
+         
         </div>
       )
   }
