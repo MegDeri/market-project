@@ -1,6 +1,8 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
 import ProductsList from './ProductsList';
+import Spinner from '../../common/Spinner/Spinner';
+import Alert from '../../common/Alert/Alert';
 
 export class Products extends React.Component  {
 
@@ -10,13 +12,15 @@ export class Products extends React.Component  {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, request } = this.props;
+    
+    const textin =  request.pending ? <Spinner /> : ((request.success && products.length > 0) ? 
+          <ProductsList products={products} />  :
+           <Alert variant="error"> {request.error} </Alert> || <Alert variant="info"> No posts!!! </Alert>) 
+    
       return (
-        
-          <div>
-          
-          <ProductsList products={products} />
-         
+        <div>
+           {textin}
         </div>
       )
   }
