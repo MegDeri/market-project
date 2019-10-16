@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'reactstrap';
+import { Col } from 'reactstrap';
 
 import Button from '../../common/Button/Button';
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
