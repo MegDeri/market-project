@@ -1,0 +1,18 @@
+@import '../../../styles/settings.scss';
+
+.main-box {
+    background: $color-text-bright;
+    border: 1px solid #efefef;
+    /*The top layer shadow*/
+    box-shadow: 
+    0 1px 1px rgba(0,0,0,0.15),
+      //the second layer
+      0 10px 0 -5px #eee,
+      //the secon layer shadow
+      0 10px 1px -4px rgba(0,0,0,0.15),
+      //the third layer
+      0 20px 0 -10px #eee,
+      //the third layer shadow
+      0 20px 1px -9px rgba(0,0,0,0.15);
+      padding: 10px;
+}
