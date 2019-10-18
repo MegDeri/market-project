@@ -8,7 +8,7 @@ const loadTestData = async () => {
             name: 'Shoes 1',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/man1.jpg'},
+            picture: { src: '../../../picture/man1.jpeg'},
             price: '€ 35',
         },
         {
@@ -16,7 +16,7 @@ const loadTestData = async () => {
             name: 'Dress 2',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman2.jpg'},
+            picture: { src: '../../../picture/woman2.jpeg'},
             price: '€ 25',
         },
         {
@@ -24,7 +24,7 @@ const loadTestData = async () => {
             name: 'Shirt 3',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/man3.jpg'},
+            picture: { src: '../../../picture/man3.jpeg'},
             price: '€ 155',
         },
         {
@@ -32,7 +32,7 @@ const loadTestData = async () => {
             name: 'Gloves 4',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman4.jpg'},
+            picture: { src: '../../../picture/woman4.jpeg'},
             price: '€ 18',
         },
         {
@@ -40,7 +40,7 @@ const loadTestData = async () => {
             name: 'Belt 5',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/man5.jpg'},
+            picture: { src: '../../../picture/man5.jpeg'},
             price: '€ 98',
         },
         {
@@ -48,7 +48,7 @@ const loadTestData = async () => {
             name: 'Jacket 6',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman6.jpg'},
+            picture: { src: '../../../picture/woman6.jpeg'},
             price: '€ 67',
         },
         {
@@ -56,7 +56,7 @@ const loadTestData = async () => {
             name: 'Jacket 7',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/man7.jpg'},
+            picture: { src: '../../../picture/man7.jpeg'},
             price: '€ 42',
         },
         {
@@ -64,7 +64,7 @@ const loadTestData = async () => {
             name: 'Skirt 8',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman8.jpg'},
+            picture: { src: '../../../picture/woman8.jpeg'},
             price: '€ 29',
         },
         {
@@ -72,7 +72,7 @@ const loadTestData = async () => {
             name: 'Trousers 9',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/man9.jpg'},
+            picture: { src: '../../../picture/man9.jpeg'},
             price: '€ 77',
         },
         {
@@ -80,7 +80,7 @@ const loadTestData = async () => {
             name: 'Jacket 10',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman10.jpg'},
+            picture: { src: '../../../picture/woman10.jpeg'},
             price: '€ 34',
         },
         {
@@ -88,7 +88,7 @@ const loadTestData = async () => {
             name: 'Jacket 11',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/woman11.jpg'},
+            picture: { src: '../../../picture/woman11.jpg'},
             price: '€ 33',
         },
         {
@@ -96,7 +96,7 @@ const loadTestData = async () => {
             name: 'T shirt 12',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/man12.jpg'},
+            picture: { src: '../../../picture/man12.jpg'},
             price: '€ 27',
         },
         {
@@ -104,7 +104,7 @@ const loadTestData = async () => {
             name: 'T shirt 13',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/woman13.jpg'},
+            picture: { src: '../../../picture/woman13.jpeg'},
             price: '€ 81',
         },
         {
@@ -112,7 +112,7 @@ const loadTestData = async () => {
             name: 'Blouse 14',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman14.jpg'},
+            picture: { src: '../../../picture/woman14.jpeg'},
             price: '€ 26',
         },
         {
@@ -120,7 +120,7 @@ const loadTestData = async () => {
             name: 'Sunglasses 15',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/man15.jpg'},
+            picture: { src: '../../../picture/man15.jpeg'},
             price: '€ 18',
         },
         {
@@ -128,7 +128,7 @@ const loadTestData = async () => {
             name: 'Sunglasses 16',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman16.jpg'},
+            picture: { src: '../../../picture/woman16.jpeg'},
             price: '€ 7',
         },
         {
@@ -136,7 +136,7 @@ const loadTestData = async () => {
             name: 'Hat 17',
             brand: 'Mountain market',
             model: 'woman',
-            picture: { src: '/picture/woman17.jpg'},
+            picture: { src: '../../../picture/woman17.jpeg'},
             price: '€ 14',
         },
         {
@@ -144,7 +144,7 @@ const loadTestData = async () => {
             name: 'Hat 18',
             brand: 'Mountain market',
             model: 'man',
-            picture: { src: '/picture/man18.jpg'},
+            picture: { src: '../../../picture/man18.jpeg'},
             price: '€ 59',
         }
     ]

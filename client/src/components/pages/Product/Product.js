@@ -7,6 +7,7 @@ import Button from '../../common/Button/Button';
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
 import HtmlBox from '../../common/HtmlBox/HtmlBox'
 import './Product.scss';
+//import man1 from '../../../picture/man1.jpg'
 
 export class Product  extends React.Component  {
   render() {
@@ -16,7 +17,7 @@ export class Product  extends React.Component  {
         <Col className="product-summary" xs={6}>
           
           <SmallTitle>{name}</SmallTitle>
-          <img src={picture.src} alt="pic" className="product-img"/>
+          <img src={require(picture.src)} alt="pic" className="product-img"/>
           <HtmlBox>{price}</HtmlBox>
           <Button variant="primary">
             Add to cart
@@ -25,6 +26,7 @@ export class Product  extends React.Component  {
         </Col>
       )
   }
+  
 }
 
 Product.propTypes = {
