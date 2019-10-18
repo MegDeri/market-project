@@ -16,8 +16,9 @@ const ProductsList= ({ products }) => (
     products: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        content: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        picture: PropTypes.object.isRequired,
+        price: PropTypes.string.isRequired,
       })
     ),
   };

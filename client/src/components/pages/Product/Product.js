@@ -10,13 +10,14 @@ import './Product.scss';
 
 export class Product  extends React.Component  {
   render() {
-    const { id, title, content } = this.props;
+    const { id, name, price, picture } = this.props;
       
     return (
         <Col className="product-summary" xs={6}>
           
-          <SmallTitle>{title}</SmallTitle>
-          <HtmlBox>{content}</HtmlBox>
+          <SmallTitle>{name}</SmallTitle>
+          <img src={picture.src} alt="pic" className="product-img"/>
+          <HtmlBox>{price}</HtmlBox>
           <Button variant="primary">
             Add to cart
           </Button>
@@ -28,6 +29,7 @@ export class Product  extends React.Component  {
 
 Product.propTypes = {
   id: PropTypes.string,
-  title: PropTypes.string,
-  content: PropTypes.string,
+  name: PropTypes.string,
+  picture: PropTypes.object,
+  price: PropTypes.string,
 };
