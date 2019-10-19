@@ -1,9 +1,9 @@
 import React from 'react'
-
 import './Logo.scss';
+import logo from '../../../images/logo.png'
 
 const Logo = ({ links, location }) => (
-  <h1 className="logo">Mountain Market</h1>
+  <img src={logo} className="logo" width="175px" height="80px"/>
 );
 
 export default Logo;
