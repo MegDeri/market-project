@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getProductsSort } from '../../../redux/postsRedux.js';
+import { getProductsSort, sortBy } from '../../../redux/postsRedux.js';
 import SideBar from './SideBar';
 
 
@@ -18,4 +18,8 @@ const mapStateToProps = state => ({
      products: getProductsSort(state),
    })
 
-export default connect(mapStateToProps)(SideBarContainer);
+const mapDispatchToProps = {
+    sortBy
+  };
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideBarContainer);

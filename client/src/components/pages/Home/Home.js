@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from 'reactstrap';
 import  Products  from "../Product/ProductsContainer";
 import SideBarContainer from '../../features/SideBar/SideBarContainer'
+import { getProductsSort, sortBy } from '../../../redux/postsRedux.js';
 
 
 export class Home extends React.Component  {
@@ -13,7 +14,7 @@ export class Home extends React.Component  {
                 <SideBarContainer />
             </Col>
             <Col xs={9}>
-                <Products />
+                <Products sortBy={sortBy} />
             </Col>
           </Row>
         </Container>
