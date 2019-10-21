@@ -4,23 +4,23 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import './SideBar.scss'
 
 
- const SideBar = ({sortBy}) =>  {
+ const SideBar = ({ getProductsSort }) =>  {
+  const handleOnClick = (e, key, direction) => {
+    e.preventDefault();
+    getProductsSort (key, direction);
+  };
 
-  const handleSortByName = ( key, direction) => {
-   
-    sortBy(key, direction);
-  }
     return (
       <Container>
         <h3>Sort by:</h3>
         <Row>
             <Col>
-              <Button onClick={() => handleSortByName( 'name', 'asc')}> Name A to Z </Button> 
+              <Button onClick={(e) => handleOnClick(e, 'name', 'asc')}> Name A to Z </Button> 
             </Col>
         </Row>
         <Row>
             <Col>
-              <Button onClick={() => handleSortByName( 'name', 'desc')}> Name Z to A </Button> 
+              <Button onClick={(e) => handleOnClickt(e, 'name', 'asc')}> Name Z to A </Button> 
             </Col>
         </Row>
         <Row>
@@ -41,5 +41,6 @@ import './SideBar.scss'
 SideBar.propTypes = {
   sortBy: PropTypes.func.isRequired
 };
+
 
 export default SideBar;

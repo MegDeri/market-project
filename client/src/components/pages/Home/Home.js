@@ -1,7 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
 import  Products  from "../Product/ProductsContainer";
-import SideBarContainer from '../../features/SideBar/SideBarContainer'
+import SideBar from '../../features/SideBar/SideBar'
+
 
 export class Home extends React.Component  {
   render() {
@@ -9,7 +11,7 @@ export class Home extends React.Component  {
         <Container>
           <Row>
             <Col xs={3}>
-                <SideBarContainer/>
+                <SideBar/>
             </Col>
             <Col xs={9}>
                 <Products />
