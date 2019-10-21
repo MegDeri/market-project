@@ -1,20 +1,21 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import { sortBy } from '../../../redux/postsRedux.js';
-// import SideBar from './SideBar';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getProductsSort } from '../../../redux/postsRedux.js';
+import SideBar from './SideBar';
 
-// const SideBarContainer = ({ sortBy }) => {
-//     return <SideBar sortBy={sortBy} />;
-//   };
-  
-//   SideBarContainer.propTypes = {
-//     sortBy: PropTypes.func.isRequired
-//   };
 
+ const SideBarContainer = ({ sortBy }) => {
+    return <SideBar sortBy={sortBy} />;
+  };
   
-//   const mapDispatchToProps = {
-//     sortBy
-//   };
+  SideBarContainer.propTypes = {
+    sortBy: PropTypes.func.isRequired
+  };
   
-//   export default connect(null, mapDispatchToProps)(SideBarContainer);
+
+const mapStateToProps = state => ({
+     products: getProductsSort(state),
+   })
+
+export default connect(mapStateToProps)(SideBarContainer);

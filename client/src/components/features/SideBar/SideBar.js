@@ -4,10 +4,10 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import './SideBar.scss'
 
 
- const SideBar = ({ getProductsSort }) =>  {
+ const SideBar = ({ sortBy }) =>  {
   const handleOnClick = (e, key, direction) => {
     e.preventDefault();
-    getProductsSort(key, direction);
+    sortBy(key, direction);
   };
 
     return (
@@ -20,7 +20,7 @@ import './SideBar.scss'
         </Row>
         <Row>
             <Col>
-              <Button onClick={(e) => handleOnClick(e, 'name', 'asc')}> Name Z to A </Button> 
+              <Button onClick={(e) => handleOnClick(e, 'name', 'desc')}> Name Z to A </Button> 
             </Col>
         </Row>
         <Row>
@@ -39,7 +39,7 @@ import './SideBar.scss'
 }
 
 SideBar.propTypes = {
-  getProductsSort: PropTypes.func.isRequired
+  sortBy: PropTypes.func.isRequired
 };
 
 
