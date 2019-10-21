@@ -5,9 +5,9 @@ import './SideBar.scss'
 
 
  const SideBar = ({ sortBy }) =>  {
-  const handleOnClick = (e, key, direction) => {
+  const handleOnClick = (e, key) => {
     e.preventDefault();
-    sortBy(key, direction);
+    sortBy(key);
   };
 
     return (
@@ -15,12 +15,12 @@ import './SideBar.scss'
         <h3>Sort by:</h3>
         <Row>
             <Col>
-              <Button onClick={(e) => handleOnClick(e, 'name', 'asc')}> Name A to Z </Button> 
+              <Button onClick={(e) => handleOnClick(e, 'name')}> Name A to Z </Button> 
             </Col>
         </Row>
         <Row>
             <Col>
-              <Button onClick={(e) => handleOnClick(e, 'name', 'desc')}> Name Z to A </Button> 
+              <Button onClick={(e) => handleOnClick(e, 'name')}> Name Z to A </Button> 
             </Col>
         </Row>
         <Row>

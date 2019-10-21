@@ -12,7 +12,7 @@ export const getRequest = ({ products }) => products.request;
 export const getProductsSort = ({ products, key, direction }) => {
    const sortedProducts = products.data.sort((a, b) => {
         if (a[key] > b[key]) return direction === 'asc'? 1 : -1;
-        if (a[key] < b[key]) return direction === 'asc' ? -1 : 1;
+        if (a[key] < b[key]) return direction === 'desc' ? -1 : 1;
         return 0;
     });
     return sortedProducts;
@@ -23,7 +23,7 @@ export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 export const startRequest = () => ({ type: START_REQUEST});
 export const endRequest = () =>({type: END_REQUEST});
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
-export const sortBy = (direction, payload) => ({ direction, payload, type: SORT_BY });
+export const sortBy = (direction) => ({ direction, type: SORT_BY });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const START_REQUEST = createActionName('START_REQUEST');
@@ -76,7 +76,7 @@ export default function reducer(statePart = initialState, action = {}) {
       case ERROR_REQUEST:
           return {...statePart, request: {pending: false, success: false, error: action.error}}
         case SORT_BY:
-            return {...statePart,  direction: {name: "asc" ? "desc" : "asc"}}
+            return {...statePart,  direction: {name: "asc" ? "desc" : ({name: "desc" ? "asc" : "desc"})}}
          
     default:
       return statePart;
