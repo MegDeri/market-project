@@ -1,8 +1,7 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'reactstrap';
 import  Products  from "../Product/ProductsContainer";
-import  { SideBar } from '../../features/SideBar/SideBar'
+import SideBarContainer from '../../features/SideBar/SideBarContainer'
 
 export class Home extends React.Component  {
   render() {
@@ -10,7 +9,7 @@ export class Home extends React.Component  {
         <Container>
           <Row>
             <Col xs={3}>
-                <SideBar />
+                <SideBarContainer/>
             </Col>
             <Col xs={9}>
                 <Products />
@@ -20,5 +19,6 @@ export class Home extends React.Component  {
       )
   }
 }
+
 
 

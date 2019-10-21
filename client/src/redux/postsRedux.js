@@ -15,12 +15,14 @@ export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 export const startRequest = () => ({ type: START_REQUEST});
 export const endRequest = () =>({type: END_REQUEST});
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
+export const sortBy = (key, direction) => ({key, direction, type: SORT_BY});
 
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const START_REQUEST = createActionName('START_REQUEST');
 export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
+export const SORT_BY = createActionName('SORT_BY');
 
 /* INITIAL STATE */
 
@@ -32,6 +34,9 @@ const initialState = {
         error: null,
         success: null,
     },
+    direction: {
+        name: "asc"
+      },
 };
 
 /* THUNKS */
@@ -63,7 +68,16 @@ export default function reducer(statePart = initialState, action = {}) {
           return {...statePart, request: {pending: false, success: true, error: null}};
       case ERROR_REQUEST:
           return {...statePart, request: {pending: false, success: false, error: action.error}};
-          
+      case SORT_BY:
+          {  const {key, direction } = action;
+          const sortedProducts = [...statePart].sort((a, b) => {
+            if (a[key] > b[key]) return direction === 'asc'? 1 : -1;
+            if (a[key] < b[key]) return direction == 'asc' ? -1 : 1;
+            return 0;
+          });
+          return sortedProducts;
+        }
+           
     default:
       return statePart;
   }
