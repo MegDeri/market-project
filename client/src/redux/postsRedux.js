@@ -9,7 +9,7 @@ const createActionName = name => `app/${reducerName}/${name}`;
 /* SELECTORS */
 export const getProducts = ({ products }) => products.data;
 export const getRequest = ({ products }) => products.request;
-export const getProductsSort = ({ products }) => 
+export const getProductsSort = ({ products, key, direction }) => 
     products.data.sort((a, b) => {
                 if (a[key] > b[key]) return direction === 'asc'? 1 : -1;
                 if (a[key] < b[key]) return direction == 'asc' ? -1 : 1;

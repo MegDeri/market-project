@@ -7,7 +7,7 @@ import './SideBar.scss'
  const SideBar = ({ getProductsSort }) =>  {
   const handleOnClick = (e, key, direction) => {
     e.preventDefault();
-    getProductsSort (key, direction);
+    getProductsSort(key, direction);
   };
 
     return (
@@ -20,7 +20,7 @@ import './SideBar.scss'
         </Row>
         <Row>
             <Col>
-              <Button onClick={(e) => handleOnClickt(e, 'name', 'asc')}> Name Z to A </Button> 
+              <Button onClick={(e) => handleOnClick(e, 'name', 'asc')}> Name Z to A </Button> 
             </Col>
         </Row>
         <Row>
@@ -39,7 +39,7 @@ import './SideBar.scss'
 }
 
 SideBar.propTypes = {
-  sortBy: PropTypes.func.isRequired
+  getProductsSort: PropTypes.func.isRequired
 };
 
 
