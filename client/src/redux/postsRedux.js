@@ -6,18 +6,32 @@ import { API_URL } from '../config';
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
-/* SELECTORS */
+/* SELECTORS (passing props to components)*/
 export const getProducts = ({ products }) => products.data;
 export const getRequest = ({ products }) => products.request;
 export const getProductsSort = ({ products }) => {
-   const sortedProducts = products.data.sort((a, b) => {
-        if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
-        if (a[products.key] < b[products.key]) return products.direction === 'desc' ? -1 : 1;
-        return 0;
-    });
-    return sortedProducts;
-};
+    const sortedProducts = products.data.sort((a, b) => {
+         if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
+         if (a[products.key] < b[products.key]) return products.direction === 'desc' ? -1 : 1;
+         return 0;
+     });
+     return sortedProducts;
+ };
 
+//  function sortOn(property){
+//     return function(a, b){
+//         if(a[property] < b[property]){return products.direction === 'desc'
+//             return -1;
+//         }else if(a[property] > b[property]){
+//             return 1;
+//         }else{
+//             return 0;   
+//         }
+//     }
+// }
+
+ 
+    
 /* ACTIONS */
 export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 export const startRequest = () => ({ type: START_REQUEST});

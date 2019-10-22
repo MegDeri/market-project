@@ -5,9 +5,8 @@ import './SideBar.scss'
 
 
  const SideBar = ({ setSortOptions }) =>  {
-  const handleOnClick = (e, key, direction) => {
-    e.preventDefault();
-    setSortOptions(key, direction);
+  const handleOnClick = (key, direction) => {
+    setSortOptions({key, direction});
   };
 
     return (
@@ -15,12 +14,12 @@ import './SideBar.scss'
         <h3>Sort by:</h3>
         <Row>
             <Col>
-              <Button onClick={(e) => handleOnClick(e, 'name', 'asc')}> Name A to Z </Button> 
+              <Button onClick={() => handleOnClick('name', 'asc')}> Name A to Z </Button> 
             </Col>
         </Row>
         <Row>
             <Col>
-              <Button onClick={(e) => handleOnClick(e, 'name', 'desc')}> Name Z to A </Button> 
+              <Button onClick={() => handleOnClick('name', 'desc')}> Name Z to A </Button> 
             </Col>
         </Row>
         <Row>

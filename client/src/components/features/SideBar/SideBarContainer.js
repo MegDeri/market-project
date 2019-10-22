@@ -12,12 +12,10 @@ import SideBar from './SideBar';
   SideBarContainer.propTypes = {
     setSortOptions: PropTypes.func.isRequired
   };
-  const mapStateToProps = state => ({
-    products: getProductsSort(state),
-  })
+
   
 const mapDispatchToProps = {
     setSortOptions
   };
 
-export default connect( mapStateToProps, mapDispatchToProps)(SideBarContainer);
+export default connect( null, mapDispatchToProps)(SideBarContainer);
