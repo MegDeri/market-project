@@ -24,12 +24,12 @@ import './SideBar.scss'
         </Row>
         <Row>
             <Col>
-              <Button> Prices from lowest </Button> 
+              <Button onClick={() => handleOnClick('price', 'asc')}> Prices from lowest </Button> 
             </Col>
         </Row>
         <Row>
             <Col>
-              <Button> Prices form highest </Button> 
+              <Button onClick={() => handleOnClick('price', 'desc')}> Prices form highest </Button> 
             </Col>
         </Row>
       </Container>
