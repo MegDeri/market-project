@@ -9,10 +9,10 @@ const createActionName = name => `app/${reducerName}/${name}`;
 /* SELECTORS */
 export const getProducts = ({ products }) => products.data;
 export const getRequest = ({ products }) => products.request;
-export const getProductsSort = ({ products, key, direction }) => {
+export const getProductsSort = ({ products }) => {
    const sortedProducts = products.data.sort((a, b) => {
-        if (a[key] > b[key]) return direction === 'asc'? 1 : -1;
-        if (a[key] < b[key]) return direction === 'desc' ? -1 : 1;
+        if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
+        if (a[products.key] < b[products.key]) return products.direction === 'desc' ? -1 : 1;
         return 0;
     });
     return sortedProducts;
@@ -23,13 +23,13 @@ export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 export const startRequest = () => ({ type: START_REQUEST});
 export const endRequest = () =>({type: END_REQUEST});
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
-export const sortBy = (direction) => ({ direction, type: SORT_BY });
+export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const START_REQUEST = createActionName('START_REQUEST');
 export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
-export const SORT_BY = createActionName('SORT_BY');
+export const SET_SORT_OPTIONS = createActionName('SET_SORT_OPTIONS');
 
 /* INITIAL STATE */
 
@@ -41,9 +41,10 @@ const initialState = {
         error: null,
         success: null,
     },
-    direction: {
-        name: "asc"
-      },
+
+    direction: "asc",
+    key: "name",
+    
 };
 
 /* THUNKS */
@@ -75,8 +76,8 @@ export default function reducer(statePart = initialState, action = {}) {
           return {...statePart, request: {pending: false, success: true, error: null}};
       case ERROR_REQUEST:
           return {...statePart, request: {pending: false, success: false, error: action.error}}
-        case SORT_BY:
-            return {...statePart,  direction: {name: "asc" ? "desc" : ({name: "desc" ? "asc" : "desc"})}}
+      case SET_SORT_OPTIONS:
+            return {...statePart,  direction: {direction: action.payload.direction, key: action.payload.key }}
          
     default:
       return statePart;
