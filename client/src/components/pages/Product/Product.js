@@ -1,11 +1,9 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
-import { Col, Card, CardImg, CardText, CardBody, CardLink,
-  CardTitle, CardSubtitle } from 'reactstrap';
+import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import Button from '../../common/Button/Button';
-import SmallTitle from '../../common/SmallTitle/SmallTitle';
-import HtmlBox from '../../common/HtmlBox/HtmlBox'
 import './Product.scss';
 
 export class Product  extends React.Component  {
@@ -22,7 +20,7 @@ export class Product  extends React.Component  {
             </CardBody>
             <CardImg src={picture.src} alt="pic" className="product-img"/>
             <Button variant="primary">
-              Add to cart
+              <Link to={`/product/${id}`}>Go to product!</Link>
             </Button>
           </Card>
         </Col>
