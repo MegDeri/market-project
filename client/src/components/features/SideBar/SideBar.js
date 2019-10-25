@@ -24,7 +24,7 @@ import './SideBar.scss'
         </Row>
         <Row>
             <Col>
-              <Button onClick={() => handleOnClick('price', 'asc')}> Prices from lowest </Button> 
+              <Button onClick={() => handleOnClick('price','asc')}> Prices from lowest </Button> 
             </Col>
         </Row>
         <Row>

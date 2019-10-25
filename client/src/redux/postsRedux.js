@@ -18,6 +18,7 @@ export const getProductsSort = ({ products }) => {
      });
      return sortedProducts;
  };
+    
 
 //  function sortOn(property){
 //     return function(a, b){
@@ -31,7 +32,6 @@ export const getProductsSort = ({ products }) => {
 //     }
 // }
 
- 
     
 /* ACTIONS */
 export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
@@ -59,9 +59,8 @@ const initialState = {
         success: null,
     },
     singleProduct: [],
-    direction: "asc",
-    key: "name",
-    
+    direction: "",
+    key: "",
 };
 
 /* THUNKS */
@@ -111,7 +110,7 @@ export default function reducer(statePart = initialState, action = {}) {
       case ERROR_REQUEST:
           return {...statePart, request: {pending: false, success: false, error: action.error}}
       case SET_SORT_OPTIONS:
-            return {...statePart, key: action.payload.key, direction: action.payload.direction }
+            return {...statePart,  key: action.payload.key, direction: action.payload.direction}
          
     default:
       return statePart;
