@@ -111,7 +111,7 @@ export default function reducer(statePart = initialState, action = {}) {
       case ERROR_REQUEST:
           return {...statePart, request: {pending: false, success: false, error: action.error}}
       case SET_SORT_OPTIONS:
-            return {...statePart,  direction: {direction: action.payload.direction, key: action.payload.key }}
+            return {...statePart, key: action.payload.key, direction: action.payload.direction }
          
     default:
       return statePart;
