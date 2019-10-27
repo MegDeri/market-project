@@ -17,7 +17,7 @@ export const Header = props => {
                     <nav className="navbar">
                         <NavLink exact to="/" activeClassName="active">Home</NavLink>
                         <NavLink exact to="/product" activeClassName="active">All Products</NavLink>
-                        <NavLink exact to="/product/:id" activeClassName="active">Single Product</NavLink>
+                        <NavLink exact to="/faq" activeClassName="active">FAQ</NavLink>
                         <NavLink exact to="/contact" activeClassName="active">Contact</NavLink>
                     </nav>
                 </Col>
