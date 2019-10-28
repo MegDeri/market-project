@@ -11,6 +11,7 @@ export const getProducts = ({ products }) => products.data;
 export const getRequest = ({ products }) => products.request;
 export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
+export const presentPage = ({ products }) => products.presentPage;
 export const getProductsSort = ({ products }) => {
     const sortedProducts = [...products.data].sort((a, b) => {
          if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
@@ -21,21 +22,7 @@ export const getProductsSort = ({ products }) => {
    
      
  };
-    
 
-//  function sortOn(property){
-//     return function(a, b){
-//         if(a[property] < b[property]){return products.direction === 'desc'
-//             return -1;
-//         }else if(a[property] > b[property]){
-//             return 1;
-//         }else{
-//             return 0;   
-//         }
-//     }
-// }
-
-    
 /* ACTIONS */
 export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 export const loadSingleProduct = payload => ({ payload, type: LOAD_SINGLE_PRODUCT });
@@ -104,13 +91,13 @@ export const loadSingleProductRequest = (id) => {
     };
 };
 
-export const loadProductsByPageRequest = (page) => {
+export const loadProductsByPageRequest = (page, productsPerPage) => {
     return async dispatch => {
   
       dispatch(startRequest());
       try {
   
-        const productsPerPage = 6;
+        //const productsPerPage = 6;
   
         const startAt = (page - 1) * productsPerPage;
         const limit = productsPerPage;

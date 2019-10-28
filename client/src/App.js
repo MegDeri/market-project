@@ -17,7 +17,7 @@ class App extends React.Component {
     return (
       
       <MainLayout>
-        <Switch>
+      <Switch>
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/product"} component={Products}/>
           <Route exact path={"/product/:id"} component={SingleProductPage} />

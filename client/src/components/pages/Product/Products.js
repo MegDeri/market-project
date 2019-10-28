@@ -8,24 +8,24 @@ import Pagination from '../../common/Pagination/Pagination';
 export class Products extends React.Component  {
 
   componentDidMount() {
-    const { loadProductsByPage } = this.props;
-    loadProductsByPage(1);
+    const { loadProductsByPage, initialPage, productsPerPage } = this.props;
+    loadProductsByPage(initialPage, productsPerPage );
   }
 
   loadProductsPage = (page) => {
-    const { loadProductsByPage } = this.props;
-    loadProductsByPage(page);
+    const { loadProductsByPage, productsPerPage } = this.props;
+    loadProductsByPage(page, productsPerPage);
   }
 
   render() {
-    const { products, request, pages } = this.props;
+    const { products, request, pages, pagination, presentPage } = this.props;
     const { loadProductsPage } = this;
     
     const textin =  request.pending ? <Spinner /> 
           : ((request.success && products.length > 0) ? 
           (<div>
           <ProductsList products={products} /> 
-          <Pagination pages={pages} onPageChange={loadProductsPage} />
+          <Pagination pages={pages} onPageChange={loadProductsPage} initialPage={presentPage} />
           </div>)
            :
            <Alert variant="error"> {request.error} </Alert> || <Alert variant="info"> No posts!!! </Alert>) 
