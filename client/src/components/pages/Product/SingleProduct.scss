@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+
+    .idTwo:hover {
+        margin-left: 0;
+        margin-top: 0;
+        border-radius: $radius;
+        box-shadow: none;
+        padding-left: 0;
+        background-color: $color-background2;
+    }
+

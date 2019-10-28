@@ -2,12 +2,29 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from "react-router-dom";
 import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-  import Button from '../../common/Button/Button';
+import Button from '../../common/Button/Button';
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
+import './SingleProduct.scss';
 
+const styles = {
+  transition: "all 1s ease-out"
+};
 
 class SingleProduct extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      scale: 1
+    };
+    this.onScale = this.onScale.bind(this);
+  }
+
+  onScale() {
+    this.setState({
+      scale: this.state.scale > 1 ? 1 : 1.5
+    });
+  }
 
   componentDidMount() {
     const { loadProducts, match } = this.props;
@@ -16,30 +33,38 @@ class SingleProduct extends React.Component {
 
   render() {
     const { products, request } = this.props;
+    const { onScale } = this;
 
     const textin =  request.pending ? ( 
         <Spinner /> 
       ) : request.success ? ( 
          products.length > 0 ? (
              
-        <Col className="product-summary" xs={12}>
-            <Card>
+        <Col className="product-summary idTwo" xs={12}>
+            <Card >
                 <CardBody>
                     <CardTitle>{products[0].name}</CardTitle>
                     <CardText>{products[0].price}</CardText>
                 </CardBody>
-                <CardImg src={products[0].picture.src} alt="pic" className="product-img"/>
+                <CardImg src={products[0].picture.src} 
+                        alt="pic" className="product-img"
+                        style={{ ...styles, transform: "scale(" + this.state.scale + ")" }}
+                />
                 <Button variant="primary">
                     Add to cart
                 </Button>
             </Card>
+            <div>
+              <Button onClick={onScale} className="scaleBtn">
+                Zoom product
+              </Button>
+            </div>
         </Col> 
               
       ) : ( 
         <Alert variant="info"> No products!!! </Alert>
       )) : ( 
-        <Alert variant="error"> {(request.error).toString()} </Alert>,
-        console.log(request.error)
+        <Alert variant="error"> {request.error} </Alert>
       );
 
     return (

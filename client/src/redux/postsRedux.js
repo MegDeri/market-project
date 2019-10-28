@@ -12,12 +12,14 @@ export const getRequest = ({ products }) => products.request;
 export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
 export const getProductsSort = ({ products }) => {
-    const sortedProducts = products.data.sort((a, b) => {
+    const sortedProducts = [...products.data].sort((a, b) => {
          if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
-         if (a[products.key] < b[products.key]) return products.direction === 'desc' ? -1 : 1;
+         if (a[products.key] < b[products.key]) return products.direction === 'asc' ? -1 : 1;
          return 0;
      });
      return sortedProducts;
+   
+     
  };
     
 
@@ -63,8 +65,8 @@ const initialState = {
         success: null,
     },
     singleProduct: [],
-    direction: "asc",
-    key: "name",
+    direction: "",
+    key: "",
     amount: 0,
     productsPerPage: 6,
     presentPage: 1,
@@ -155,7 +157,10 @@ export default function reducer(statePart = initialState, action = {}) {
       case ERROR_REQUEST:
           return {...statePart, request: {pending: false, success: false, error: action.error}}
       case SET_SORT_OPTIONS:
-            return {...statePart,  key: action.payload.key, direction: action.payload.direction }
+            return {...statePart,  
+                key: action.payload.key, 
+                direction: action.payload.direction,
+             }
          
     default:
       return statePart;
