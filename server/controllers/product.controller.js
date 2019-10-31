@@ -1,4 +1,5 @@
 const Product = require('../models/product.model');
+const uuid = require('uuid');
 
 // get all products
   exports.getProducts = async (req, res) => {
@@ -44,3 +45,24 @@ const Product = require('../models/product.model');
     }
   
   };
+
+  // add new product
+exports.addProduct = async function (req, res) {
+
+  try {
+    const { name, price, picture } = req.body;
+
+    let newProduct = new Product();
+    newProduct.name = name;
+    newProduct.price = price;
+    newProduct.picture = picture;
+    newProduct.id = uuid();
+
+    productSaved = await newProduct.save();
+    res.status(200).json(productSaved);
+
+  } catch(err) {
+    res.status(500).json(err);
+  }
+
+}
