@@ -4,13 +4,57 @@ import { PropTypes } from 'prop-types';
 import  { Product } from './Product';
 import './Product.scss';
 
-const ProductsList= ({ products }) => (
-    <div>
-      <section className="product-list">
-        {products.map(product => <Product key={product.id} {...product} />)}
-      </section>
-    </div>
-  );
+export class ProductsList extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      cart: [],
+    };
+  }
+
+  findProductIndex = (cart, itemID) => {
+    return cart.findIndex(p => p.id === itemID);
+  };
+
+  updateProductAmount(cart, item) {
+    const existingProductIndex = this.findProductIndex(cart, item.id)
+    
+    const updatedProducts = [...cart];
+    const existingProduct = updatedProducts[existingProductIndex];
+      
+    const updatedAmountProduct = {
+      ...existingProduct, 
+      amount: existingProduct.amount + item.amount,
+    };
+
+    updatedProducts[existingProductIndex] = updatedAmountProduct;
+    
+      return updatedProducts;    
+  }
+  
+  handleAddFun (item) {
+    const {cart} = this.state;
+    const existingProductIndex = this.findProductIndex(cart, item.id)
+   
+    this.setState({
+      cart: existingProductIndex >= 0
+        ? this.updateProductAmount(cart, item)
+        : [...cart, item ]
+    });
+  }
+
+  render() {
+    const { products } = this.props;
+    return (
+      <div>
+        <ul>{this.state.cart.map(c => <li key={c.id}>{c.name} | amount {c.amount}</li>)}</ul>
+        <section className="product-list">
+          {products.map(product => <Product key={product.id} {...product} addFun={this.handleAddFun.bind(this)}/>)}
+        </section>
+      </div>
+    );
+  }
+}
   
   ProductsList.propTypes = {
     products: PropTypes.arrayOf(

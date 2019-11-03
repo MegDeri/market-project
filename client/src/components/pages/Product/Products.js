@@ -18,7 +18,7 @@ export class Products extends React.Component  {
   }
 
   render() {
-    const { products, request, pages, pagination, presentPage } = this.props;
+    const { products, request, pages, presentPage } = this.props;
     const { loadProductsPage } = this;
     
     const textin =  request.pending ? <Spinner /> 

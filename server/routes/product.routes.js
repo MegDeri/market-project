@@ -12,7 +12,4 @@ router.route('/products/:id').get(ProductController.getSingleProduct);
 // get products by range
 router.route('/products/range/:startAt/:limit').get(ProductController.getProductsByRange);
 
-// add products
-router.route('/products/cart').post(ProductController.addProduct);
-
 module.exports = router;

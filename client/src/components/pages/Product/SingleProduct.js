@@ -5,6 +5,7 @@ import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import Button from '../../common/Button/Button';
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
+import { Link } from 'react-router-dom';
 import './SingleProduct.scss';
 
 const styles = {
@@ -12,8 +13,8 @@ const styles = {
 };
 
 class SingleProduct extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       scale: 1
     };
@@ -32,7 +33,7 @@ class SingleProduct extends React.Component {
   }
 
   render() {
-    const { products, request } = this.props;
+    const { products, request } = this.props; 
     const { onScale } = this;
 
     const textin =  request.pending ? ( 
@@ -50,8 +51,8 @@ class SingleProduct extends React.Component {
                         alt="pic" className="product-img"
                         style={{ ...styles, transform: "scale(" + this.state.scale + ")" }}
                 />
-                <Button variant="primary">
-                    Add to cart
+                <Button variant="primary" >
+                  <Link to={`/cart`}>Go to cart</Link>
                 </Button>
             </Card>
             <div>
