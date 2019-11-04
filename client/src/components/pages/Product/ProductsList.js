@@ -32,7 +32,7 @@ export class ProductsList extends React.Component {
       return updatedProducts;    
   }
   
-  handleAddFun (item) {
+  handleAddClick (item) {
     const {cart} = this.state;
     const existingProductIndex = this.findProductIndex(cart, item.id)
    
@@ -49,7 +49,7 @@ export class ProductsList extends React.Component {
       <div>
         <ul>{this.state.cart.map(c => <li key={c.id}>{c.name} | amount {c.amount}</li>)}</ul>
         <section className="product-list">
-          {products.map(product => <Product key={product.id} {...product} addFun={this.handleAddFun.bind(this)}/>)}
+          {products.map(product => <Product key={product.id} {...product} addFun={this.handleAddClick.bind(this)}/>)}
         </section>
       </div>
     );

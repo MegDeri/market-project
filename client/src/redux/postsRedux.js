@@ -29,7 +29,7 @@ export const startRequest = () => ({ type: START_REQUEST});
 export const endRequest = () =>({type: END_REQUEST});
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
-export const addItemToCart = payload => ({ payload, type: ADD_TO_CART });
+export const addItemToCart = payload => ({ payload, amountCart: 1, type: ADD_TO_CART });
 
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
@@ -55,6 +55,7 @@ const initialState = {
         success: null,
     },
     cart: [],
+    totalItems: 0,
     singleProduct: [],
     direction: "",
     key: "",
@@ -153,7 +154,23 @@ export default function reducer(statePart = initialState, action = {}) {
                 direction: action.payload.direction,
              }
       case ADD_TO_CART:
-            return {...statePart, cart: action.payload}
+        for (let i=0; i < statePart.cart.length; i++) {
+            if(statePart.cart[i].name === action.payload.name) {
+                statePart.cart[i].amountCart++;
+                return {
+                    ...statePart,
+                    totalItems: statePart.totalItems + 1
+                };
+            }
+        }
+        const itemAdded = action.payload;
+        //add amount to single item
+        itemAdded.amountCart = action.amountCart;
+        return {
+            ...statePart,
+            cart: [...statePart.cart, itemAdded],
+            totalItems: statePart.totalItems + 1
+        }
         
     default:
       return statePart;

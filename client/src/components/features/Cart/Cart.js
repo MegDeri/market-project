@@ -5,8 +5,8 @@ import { Container, Row, Col, Table, Button } from 'reactstrap';
 class Cart extends React.Component  {
 
     render() {
-        
-        const { products } = this.props;
+       
+        const { products, addItemToCart } = this.props;
         console.log("this products are:", products)
         
         return (
@@ -24,10 +24,7 @@ class Cart extends React.Component  {
                                 </tr>
                             </thead>
                             <tbody>
-                                <td>{products}</td>
-                                <td>{products}</td>
-                                <td>{products}</td>
-                                <td>{products}</td>
+                            {/* <ul>{products.cart.map(c => <li key={c.id}>{c.name} | amount {c.amount}</li>)}</ul> */}
                             </tbody>
                         </Table>
                     </Col>
@@ -47,7 +44,7 @@ Cart.propTypes = {
           price: PropTypes.string.isRequired,
       })
     ),
-    loadProducts: PropTypes.func.isRequired,
+    addItemToCart:  PropTypes.func.isRequired,
   };
 
 export default Cart;
