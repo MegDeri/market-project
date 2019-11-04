@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { API_URL } from '../config';
 
-
 // action name creator
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
@@ -10,9 +9,9 @@ const createActionName = name => `app/${reducerName}/${name}`;
 export const getProducts = ({ products }) => products.data;
 export const getRequest = ({ products }) => products.request;
 export const getSingleProduct = ({ products }) => products.singleProduct;
-export const cartSelector = ({ products }) => products.cart;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
 export const presentPage = ({ products }) => products.presentPage;
+export const cartSelector = ({ products}) => products.cart;
 export const getProductsSort = ({ products }) => {
     const sortedProducts = [...products.data].sort((a, b) => {
          if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
@@ -20,8 +19,6 @@ export const getProductsSort = ({ products }) => {
          return 0;
      });
      return sortedProducts;
-   
-     
  };
 
 /* ACTIONS */

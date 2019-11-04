@@ -3,24 +3,11 @@ import { PropTypes } from 'prop-types';
 import { Container, Row, Col, Table, Button } from 'reactstrap';
   
 class Cart extends React.Component  {
-    constructor(props) {
-        super(props);
-        this.state = {
-         product: [
-            {
-            name: 'Magda',
-            price:'',
-            picture: '',
-            amount: 1,
-            }
-         ]
-        };
-        
-      }
 
     render() {
         
-        const { product } = this.state;
+        const { products } = this.props;
+        console.log("this products are:", products)
         
         return (
             <div>
@@ -37,10 +24,10 @@ class Cart extends React.Component  {
                                 </tr>
                             </thead>
                             <tbody>
-                                <td>{product.name}</td>
-                                <td>{product.price}</td>
-                                <td>{product.picture}</td>
-                                <td>{product.amount}</td>
+                                <td>{products}</td>
+                                <td>{products}</td>
+                                <td>{products}</td>
+                                <td>{products}</td>
                             </tbody>
                         </Table>
                     </Col>
