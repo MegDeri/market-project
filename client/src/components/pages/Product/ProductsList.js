@@ -5,43 +5,48 @@ import  { Product } from './Product';
 import './Product.scss';
 
 export class ProductsList extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       cart: [],
     };
   }
 
-  findProductIndex = (cart, itemID) => {
-    return cart.findIndex(p => p.id === itemID);
-  };
+  // findProductIndex = (cart, itemID) => {
+  //   return cart.findIndex(p => p.id === itemID);
+  // };
 
-  updateProductAmount(cart, item) {
-    const existingProductIndex = this.findProductIndex(cart, item.id)
+  // updateProductAmount(cart, item) {
+  //   const existingProductIndex = this.findProductIndex(cart, item.id)
     
-    const updatedProducts = [...cart];
-    const existingProduct = updatedProducts[existingProductIndex];
+  //   const updatedProducts = [...cart];
+  //   const existingProduct = updatedProducts[existingProductIndex];
       
-    const updatedAmountProduct = {
-      ...existingProduct, 
-      amount: existingProduct.amount + item.amount,
-    };
+  //   const updatedAmountProduct = {
+  //     ...existingProduct, 
+  //     amount: existingProduct.amount + item.amount,
+  //   };
 
-    updatedProducts[existingProductIndex] = updatedAmountProduct;
+  //   updatedProducts[existingProductIndex] = updatedAmountProduct;
     
-      return updatedProducts;    
-  }
+  //     return updatedProducts;    
+  // }
+  
+  // handleAddClick (item) {
+  //   const {cart} = this.state;
+  //   const existingProductIndex = this.findProductIndex(cart, item.id)
+   
+  //   this.setState({
+  //     cart: existingProductIndex >= 0
+  //       ? this.updateProductAmount(cart, item)
+  //       : [...cart, item ]
+  //   });
+  // }
   
   handleAddClick (item) {
-    const {cart} = this.state;
-    const existingProductIndex = this.findProductIndex(cart, item.id)
-   
-    this.setState({
-      cart: existingProductIndex >= 0
-        ? this.updateProductAmount(cart, item)
-        : [...cart, item ]
-    });
-  }
+    const { addItemToCart, cart } = this.props;
+    addItemToCart (cart, item);
+    }
 
   render() {
     const { products } = this.props;
@@ -65,6 +70,7 @@ export class ProductsList extends React.Component {
         price: PropTypes.string.isRequired,
       })
     ),
+    addItemToCart: PropTypes.func.isRequired,
   };
   
   export default ProductsList;
