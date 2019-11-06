@@ -1,54 +1,27 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {addToCartAction} from '../../../redux/cart.actions';
+
 import  { Product } from './Product';
-import  Cart  from '../../features/Cart/CartList'
+import  CartPage from '../../features/Cart/CartPage'
 import './Product.scss';
 
 class ProductsList extends React.Component {
   
-
-  findProductIndex = (cart, itemID) => {
-    return cart.findIndex(p => p.id === itemID);
+  handleAddClick = (item) => {
+    this.props.addToCartAction(item);
   };
-
-  updateProductAmount(cart, item) {
-    const existingProductIndex = this.findProductIndex(cart, item.id)
-    
-    const updatedProducts = [...cart];
-    const existingProduct = updatedProducts[existingProductIndex];
-      
-    const updatedAmountProduct = {
-      ...existingProduct, 
-      amount: existingProduct.amount + item.amount,
-    };
-
-    updatedProducts[existingProductIndex] = updatedAmountProduct;
-    
-      return updatedProducts;    
-  }
-  
-  handleAddClick (item) {
-    const {cart} = this.state;
-    const existingProductIndex = this.findProductIndex(cart, item.id)
-   
-    this.setState({
-      cart: existingProductIndex >= 0
-        ? this.updateProductAmount(cart, item)
-        : [...cart, item ]
-    });
-  }
   
   render() {
-
-    const { products } = this.props;
+    const { products, addToCartAction } = this.props;
     console.log(this.props.cart)
     return (
       <div>
-        <Cart cart={this.props.cart} />
-        {/* <ul>{this.state.cart.map(c => <li key={c.id}>{c.name} | amount {c.amount}</li>)}</ul> */}
+        <CartPage cart={this.props.cart} />
         <section className="product-list">
-          {products.map(product => <Product key={product.id} {...product} addFun={this.handleAddClick.bind(this)}/>)}
+          {products.map(product => <Product key={product.id} {...product}  addToCartAction={addToCartAction} addFun={this.handleAddClick.bind(this)}/>)}
         </section>
       </div>
     );
@@ -66,12 +39,20 @@ class ProductsList extends React.Component {
     ),
   };
   
+  
 
-  const mapStateToProp = ({cart}) => {
+  const mapStateToProps = ({cart}) => {
     return {
       cart
     }
   }
+
+  const mapActionsToProps = (dispatch) => {
+    return bindActionCreators({
+      addToCartAction
+    }, dispatch)
+
+  }
   
   
-  export default connect(mapStateToProp)(ProductsList);
+  export default connect(mapStateToProps, mapActionsToProps)(ProductsList);

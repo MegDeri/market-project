@@ -22,7 +22,7 @@ export class Product  extends React.Component  {
             <Button variant="primary">
               <Link to={`/product/${id}`}>Go to product!</Link>
             </Button>
-            <Button variant="primary" onClick={() => addFun({id, name, price, amount: 1})} >
+            <Button variant="primary" onClick={() => addFun({id, name, price, picture, amount: 1})} >
                   Add to cart
             </Button>
           </Card>
@@ -35,6 +35,6 @@ export class Product  extends React.Component  {
 Product.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
-  picture: PropTypes.object,
+  picture: PropTypes.string,
   price: PropTypes.string,
 };

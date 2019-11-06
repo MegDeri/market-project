@@ -11,7 +11,6 @@ export const getRequest = ({ products }) => products.request;
 export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
 export const presentPage = ({ products }) => products.presentPage;
-export const cartSelector = ({ products}) => products.cart;
 export const getProductsSort = ({ products }) => {
     const sortedProducts = [...products.data].sort((a, b) => {
          if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
@@ -29,7 +28,6 @@ export const startRequest = () => ({ type: START_REQUEST});
 export const endRequest = () =>({type: END_REQUEST});
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
-export const addItemToCart = payload => ({ payload, amountCart: 1, type: ADD_TO_CART });
 
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
@@ -39,12 +37,7 @@ export const START_REQUEST = createActionName('START_REQUEST');
 export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const SET_SORT_OPTIONS = createActionName('SET_SORT_OPTIONS');
-export const ADD_TO_CART = createActionName('ADD_TO_CART');
-// export const CHANGE_QUANTITY = createActionName('CHANGE_QUANTITY');
-// export const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
-// export const COUNT_TOTAL_PRICE = createActionName('COUNT_TOTAL_PRICE');
 
-//auxiliary functions for CART:
 
 const initialState = {
     data: [],
@@ -54,8 +47,6 @@ const initialState = {
         error: null,
         success: null,
     },
-    cart: [],
-    totalItems: 0,
     singleProduct: [],
     direction: "",
     key: "",
@@ -153,28 +144,9 @@ export default function reducer(statePart = initialState, action = {}) {
                 key: action.payload.key, 
                 direction: action.payload.direction,
              }
-      case ADD_TO_CART:
-        for (let i=0; i < statePart.cart.length; i++) {
-            if(statePart.cart[i].id === action.payload.id) {
-                statePart.cart[i].amountCart++;
-                return {
-                    ...statePart,
-                    totalItems: statePart.totalItems + 1
-                };
-            }
-        }
-        const itemAdded = action.payload;
-        //add amount to single item
-        itemAdded.amountCart = action.amountCart;
-        return {
-            ...statePart,
-            cart: [...statePart.cart, itemAdded],
-            totalItems: statePart.totalItems + 1
-        }
-        
-    default:
-      return statePart;
       
+      default:
+      return statePart;
   }
 };
 

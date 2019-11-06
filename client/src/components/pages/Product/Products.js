@@ -49,7 +49,7 @@ Products.propTypes = {
       price: PropTypes.string.isRequired,
     })
   ),
-  loadProducts: PropTypes.func.isRequired,
+  loadProductsByPage: PropTypes.func.isRequired,
 };
 
 Products.defaultProps = {
