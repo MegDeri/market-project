@@ -1,22 +1,17 @@
-import { connect } from 'react-redux';
-import { cartSelector, addItemToCart } from '../../../redux/postsRedux';
-import  { ProductsList } from './ProductsList';
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
 
-const mapStateToProps = state => ({
-  products: cartSelector(state),
-})
+// import  { ProductsList } from './ProductsList';
 
-const ProductListContainer = ({ addItemToCart }) => {
-    return <ProductList addItemToCart={addItemToCart} />;
-  };
-  
-  ProductListContainer.propTypes = {
-    addItemToCart: PropTypes.func.isRequired
-  };
-  
-  
-  const mapDispatchToProps = {
-    addItemToCart
-  };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductsList);
+
+// const mapStateToProp = ({cart}) => {
+//   return {
+//     cart
+//   }
+// }
+
+
+
+// export default connect(mapStateToProp)(ProductsList);

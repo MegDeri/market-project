@@ -9,7 +9,7 @@ import  Products from './components/pages/Product/ProductsContainer';
 import  SingleProductPage  from './components/pages/SingleProductPage/SingleProductPage';
 import { ContactPage } from './components/pages/Contact/ContactPage';
 import Faq from './components/pages/FAQ/FAQ';
-import Cart from './components/features/Cart/Cart';
+import Cart from './components/features/Cart/CartList';
 import { NotFoundPage } from './components/pages/NotFound/NotFoundPage';
 
 class App extends React.Component {

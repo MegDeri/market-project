@@ -155,7 +155,7 @@ export default function reducer(statePart = initialState, action = {}) {
              }
       case ADD_TO_CART:
         for (let i=0; i < statePart.cart.length; i++) {
-            if(statePart.cart[i].name === action.payload.name) {
+            if(statePart.cart[i].id === action.payload.id) {
                 statePart.cart[i].amountCart++;
                 return {
                     ...statePart,
