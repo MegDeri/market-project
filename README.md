@@ -1,13 +1,13 @@
 # market-project
-# market-project
-Final bootcamp project(version is not completed, yet....work in progress)
-Description:
+### Final bootcamp project(version is not completed, yet....work in progress)
+
+### Description:
 Front-end application in React, Redux, connected to MongoDB.
 
 Application contains: main website with all products, sub-website with  single product and cart.
 
-Init project:
-Clone project and after cloning use command npm install.
+### Init project:
+Clone project and after cloning use command ```npm install```.
 
 All needed source files are in src/.
 
@@ -18,9 +18,9 @@ NPM Scripts
 
 -start: start project, watch on change and rebuilt after changes.
  
-- to upload data to database go to server/ and  use command: "yarn start"
+- to upload data to database go to server/ and  use command:```yarn start```
 
-Project tree:
+```Project tree:
 client/
   public/
   src/
@@ -40,4 +40,4 @@ server/
   models/
   routes/
   config.js
-  server.js
+  server.js```
