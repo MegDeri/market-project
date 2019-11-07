@@ -7,14 +7,7 @@
 
  import {ADD_TO_CART} from './cart.actions';
 
- const INITIAL_STATE =  [
-        { id: '1',
-        name: 'Shoes 1',
-        price: '€ 35',
-        amount: 1,
-        picture: '../../../picture/man1.jpeg',
-        }        
-     ];
+ const INITIAL_STATE =  [];
 
  
 

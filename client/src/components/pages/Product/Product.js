@@ -35,6 +35,6 @@ export class Product  extends React.Component  {
 Product.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
-  picture: PropTypes.string,
+  picture: PropTypes.object,
   price: PropTypes.string,
 };

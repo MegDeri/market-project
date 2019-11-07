@@ -3,10 +3,10 @@ import Cart from './CartList';
 
 class CartPage extends React.Component {
 render() {
-  const { cart } = this.props;
+  const {cart} = this.props;
     return(
       <div>
-        <Cart cart={cart}/>
+        <Cart cart={cart} />
       </div>
     );
   }

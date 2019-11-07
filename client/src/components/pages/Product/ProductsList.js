@@ -15,11 +15,11 @@ class ProductsList extends React.Component {
   };
   
   render() {
-    const { products, addToCartAction } = this.props;
+    const { products, addToCartAction, cart } = this.props;
     console.log(this.props.cart)
     return (
       <div>
-        <CartPage cart={this.props.cart} />
+        <CartPage cart={cart} />
         <section className="product-list">
           {products.map(product => <Product key={product.id} {...product}  addToCartAction={addToCartAction} addFun={this.handleAddClick.bind(this)}/>)}
         </section>
