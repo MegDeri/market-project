@@ -36,5 +36,6 @@ Product.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.object,
-  price: PropTypes.string,
+  price: PropTypes.number,
+  text: PropTypes.string,
 };

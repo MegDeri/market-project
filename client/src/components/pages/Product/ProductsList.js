@@ -34,7 +34,7 @@ class ProductsList extends React.Component {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         picture: PropTypes.object.isRequired,
-        price: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
       })
     ),
   };

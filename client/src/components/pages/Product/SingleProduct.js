@@ -46,6 +46,7 @@ class SingleProduct extends React.Component {
                 <CardBody>
                     <CardTitle>{products[0].name}</CardTitle>
                     <CardText>{products[0].price}</CardText>
+                    <CardText>{products[0].text}</CardText>
                 </CardBody>
                 <CardImg src={products[0].picture.src} 
                         alt="pic" className="product-img"
@@ -85,7 +86,7 @@ SingleProduct.propTypes = {
         brand:PropTypes.string.isRequired,
         model:PropTypes.string.isRequired,
         picture: PropTypes.object.isRequired,
-        price: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
     })
   ),
   loadProducts: PropTypes.func.isRequired,

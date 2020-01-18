@@ -9,7 +9,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/man1.jpeg'},
-            price: '€ 35',
+            price: 35,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '2',
@@ -17,7 +18,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman2.jpeg'},
-            price: '€ 25',
+            price: 25,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '3',
@@ -25,7 +27,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/man3.jpeg'},
-            price: '€ 155',
+            price: 155,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '4',
@@ -33,7 +36,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman4.jpeg'},
-            price: '€ 18',
+            price: 18,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '5',
@@ -41,7 +45,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/man5.jpeg'},
-            price: '€ 98',
+            price: 98,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '6',
@@ -49,7 +54,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman6.jpeg'},
-            price: '€ 67',
+            price: 67,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '7',
@@ -57,7 +63,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/man7.jpeg'},
-            price: '€ 42',
+            price: 42,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '8',
@@ -65,7 +72,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman8.jpeg'},
-            price: '€ 29',
+            price: 29,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '9',
@@ -73,7 +81,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/man9.jpeg'},
-            price: '€ 77',
+            price: 77,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '10',
@@ -81,7 +90,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman10.jpeg'},
-            price: '€ 34',
+            price: 34,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '11',
@@ -89,7 +99,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/woman11.jpg'},
-            price: '€ 33',
+            price: 33,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '12',
@@ -97,7 +108,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/man12.jpg'},
-            price: '€ 27',
+            price: 27,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '13',
@@ -105,7 +117,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/woman13.jpeg'},
-            price: '€ 81',
+            price: 81,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '14',
@@ -113,7 +126,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman14.jpeg'},
-            price: '€ 26',
+            price: 26,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '15',
@@ -121,7 +135,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/man15.jpeg'},
-            price: '€ 18',
+            price: 18,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '16',
@@ -129,7 +144,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman16.jpeg'},
-            price: '€ 7',
+            price: 7,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '17',
@@ -137,7 +153,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'woman',
             picture: { src: '../../../picture/woman17.jpeg'},
-            price: '€ 14',
+            price: 14,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
             id: '18',
@@ -145,7 +162,8 @@ const loadTestData = async () => {
             brand: 'Mountain market',
             model: 'man',
             picture: { src: '../../../picture/man18.jpeg'},
-            price: '€ 59',
+            price: 59,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         }
     ]
 
