@@ -45,21 +45,24 @@ class SingleProduct extends React.Component {
             <Card >
                 <CardBody>
                     <CardTitle>{products[0].name}</CardTitle>
-                    <CardText>{products[0].price}</CardText>
-                    <CardText>{products[0].text}</CardText>
+                    <CardText>€{products[0].price}</CardText>
+                    
                 </CardBody>
                 <CardImg src={products[0].picture.src} 
                         alt="pic" className="product-img"
                         style={{ ...styles, transform: "scale(" + this.state.scale + ")" }}
                 />
+
                 <Button variant="primary" >
                   <Link to={`/cart`}>Go to cart</Link>
                 </Button>
+
             </Card>
             <div>
               <Button onClick={onScale} className="scaleBtn">
                 Zoom product
               </Button>
+              <div>{products[0].text}</div>
             </div>
         </Col> 
               
@@ -68,6 +71,8 @@ class SingleProduct extends React.Component {
       )) : ( 
         <Alert variant="error"> {request.error} </Alert>
       );
+
+      
 
     return (
       <div> 
@@ -87,6 +92,7 @@ SingleProduct.propTypes = {
         model:PropTypes.string.isRequired,
         picture: PropTypes.object.isRequired,
         price: PropTypes.number.isRequired,
+        text: PropTypes.string.isRequired,
     })
   ),
   loadProducts: PropTypes.func.isRequired,

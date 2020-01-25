@@ -8,7 +8,7 @@ import './Product.scss';
 
 export class Product  extends React.Component  {
   render() {
-    const { id, name, price, picture, addFun } = this.props;
+    const { id, name, price, picture, text, addFun } = this.props;
       
     return (
       
@@ -17,6 +17,7 @@ export class Product  extends React.Component  {
             <CardBody>
               <CardTitle>{name}</CardTitle>
               <CardText>€{price}</CardText>
+              <CardText>{text}</CardText>
             </CardBody>
             <CardImg src={picture.src} alt="pic" className="product-img"/>
             <Button variant="primary">
@@ -38,4 +39,5 @@ Product.propTypes = {
   picture: PropTypes.object,
   price: PropTypes.number,
   text: PropTypes.string,
+  model: PropTypes.string,
 };

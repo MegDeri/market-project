@@ -47,6 +47,7 @@ Products.propTypes = {
       model:PropTypes.string.isRequired,
       picture: PropTypes.object.isRequired,
       price: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
     })
   ),
   loadProductsByPage: PropTypes.func.isRequired,
