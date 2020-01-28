@@ -1,5 +1,8 @@
 @import '../../../styles/settings.scss';
 
+    .fullCol {
+        display: flex;
+    }
 
     .idTwo:hover {
         margin-left: 0;
@@ -8,5 +11,10 @@
         box-shadow: none;
         padding-left: 0;
         background-color: $color-background2;
+    }
+
+    .textPro {
+        padding: 20px;
+        
     }
 

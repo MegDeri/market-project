@@ -40,31 +40,31 @@ class SingleProduct extends React.Component {
         <Spinner /> 
       ) : request.success ? ( 
          products.length > 0 ? (
-             
-        <Col className="product-summary idTwo" xs={12}>
+        <div className="fullCol">
+          <Col className="product-summary idTwo" xs={6}>
             <Card >
-                <CardBody>
-                    <CardTitle>{products[0].name}</CardTitle>
-                    <CardText>€{products[0].price}</CardText>
-                    
-                </CardBody>
-                <CardImg src={products[0].picture.src} 
-                        alt="pic" className="product-img"
-                        style={{ ...styles, transform: "scale(" + this.state.scale + ")" }}
-                />
-
-                <Button variant="primary" >
-                  <Link to={`/cart`}>Go to cart</Link>
-                </Button>
-
-            </Card>
-            <div>
+              <CardBody>
+                <CardTitle>{products[0].name}</CardTitle>
+                <CardText>€{products[0].price}</CardText>
+              </CardBody>
+              <CardImg 
+                src={products[0].picture.src} 
+                alt="pic" className="product-img"
+                style={{ ...styles, transform: "scale(" + this.state.scale + ")" }}
+              />
+              <Button variant="primary" >
+                <Link to={`/cart`}>Go to cart</Link>
+              </Button>
               <Button onClick={onScale} className="scaleBtn">
                 Zoom product
               </Button>
-              <div>{products[0].text}</div>
-            </div>
-        </Col> 
+            </Card>
+          </Col>
+          <Col className="product-summary idTwo" xs={6}>
+            <div className="textPro">{products[0].text}</div>
+          </Col>
+        </div>   
+        
               
       ) : ( 
         <Alert variant="info"> No products!!! </Alert>
@@ -72,7 +72,7 @@ class SingleProduct extends React.Component {
         <Alert variant="error"> {request.error} </Alert>
       );
 
-      
+     
 
     return (
       <div> 

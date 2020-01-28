@@ -17,7 +17,6 @@ export class Product  extends React.Component  {
             <CardBody>
               <CardTitle>{name}</CardTitle>
               <CardText>€{price}</CardText>
-              <CardText>{text}</CardText>
             </CardBody>
             <CardImg src={picture.src} alt="pic" className="product-img"/>
             <Button variant="primary">
