@@ -33,7 +33,7 @@ class SingleProduct extends React.Component {
   }
 
   render() {
-    const { products, request } = this.props; 
+    const { products, request, id, name, price, picture, addFun } = this.props; 
     const { onScale } = this;
 
     const textin =  request.pending ? ( 
@@ -62,6 +62,9 @@ class SingleProduct extends React.Component {
           </Col>
           <Col className="product-summary idTwo" xs={6}>
             <div className="textPro">{products[0].text}</div>
+            <Button variant="primary" onClick={() => addFun({id, name, price, picture, amount: 1})} >
+                Add to cart
+            </Button>
           </Col>
         </div>   
         

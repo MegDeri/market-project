@@ -1,14 +1,14 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {addToCartAction} from '../../../redux/cart.actions';
+// import { connect } from 'react-redux';
+// import {bindActionCreators} from 'redux';
+// import {addToCartAction} from '../../../redux/cart.actions';
 
 import  { Product } from './Product';
-import  CartPage from '../../features/Cart/CartPage'
+//import  CartPage from '../../features/Cart/CartPage'
 import './Product.scss';
 
-class ProductsList extends React.Component {
+export default class ProductsList extends React.Component {
   
   handleAddClick = (item) => {
     this.props.addToCartAction(item);
@@ -19,7 +19,7 @@ class ProductsList extends React.Component {
     console.log(this.props.cart)
     return (
       <div>
-        <CartPage cart={cart} />
+        {/* <CartPage cart={cart} /> */}
         <section className="product-list">
           {products.map(product => <Product key={product.id} {...product}  addToCartAction={addToCartAction} addFun={this.handleAddClick.bind(this)}/>)}
         </section>
@@ -42,18 +42,18 @@ class ProductsList extends React.Component {
   
   
 
-  const mapStateToProps = ({cart}) => {
-    return {
-      cart
-    }
-  }
+  // const mapStateToProps = ({cart}) => {
+  //   return {
+  //     cart
+  //   }
+  // }
 
-  const mapActionsToProps = (dispatch) => {
-    return bindActionCreators({
-      addToCartAction
-    }, dispatch)
+  // const mapActionsToProps = (dispatch) => {
+  //   return bindActionCreators({
+  //     addToCartAction
+  //   }, dispatch)
 
-  }
+  // }
   
   
-  export default connect(mapStateToProps, mapActionsToProps)(ProductsList);
+  // export default connect(mapStateToProps, mapActionsToProps)(ProductsList);

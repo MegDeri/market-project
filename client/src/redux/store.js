@@ -3,12 +3,12 @@ import thunk from 'redux-thunk';
 
 // import reducers
 import products from './postsRedux';
-import cartReducer from './cart.reducer';
+//import cartReducer from './cart.reducer';
 
 // combine reducers
 const rootReducer = combineReducers({
     products,
-    cart: cartReducer
+    // cart: cartReducer
   });
 
   // create store
