@@ -8,7 +8,7 @@ import './Product.scss';
 
 export class Product  extends React.Component  {
   render() {
-    const { id, name, price, picture, addFun } = this.props;
+    const { id, name, price, picture, addFun} = this.props;
       
     return (
       
@@ -22,7 +22,7 @@ export class Product  extends React.Component  {
             <Button variant="primary">
               <Link to={`/product/${id}`}>Go to product!</Link>
             </Button>
-            <Button variant="primary" onClick={() => addFun({id, name, price, picture, amount: 1})} >
+            <Button variant="primary" onClick={() => addFun({id, name, price, picture, amount: 1})}>
                   Add to cart
             </Button>
           </Card>
