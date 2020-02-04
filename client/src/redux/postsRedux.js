@@ -11,6 +11,7 @@ export const getRequest = ({ products }) => products.request;
 export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
 export const presentPage = ({ products }) => products.presentPage;
+export const getCart = ({ products }) => products.cart;
 export const getProductsSort = ({ products }) => {
     const sortedProducts = [...products.data].sort((a, b) => {
          if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
@@ -28,7 +29,7 @@ export const startRequest = () => ({ type: START_REQUEST});
 export const endRequest = () =>({type: END_REQUEST});
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
-
+export const addToCartAction = payload => ({payload, type: ADD_TO_CART });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const LOAD_SINGLE_PRODUCT = createActionName('LOAD_SINGLE_PRODUCT');
@@ -37,6 +38,7 @@ export const START_REQUEST = createActionName('START_REQUEST');
 export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const SET_SORT_OPTIONS = createActionName('SET_SORT_OPTIONS');
+export const ADD_TO_CART = createActionName("ADD_TO_CART");
 
 
 const initialState = {
@@ -53,6 +55,7 @@ const initialState = {
     amount: 0,
     productsPerPage: 6,
     presentPage: 1,
+    cart: [],
 };
 
 /* THUNKS */
@@ -144,6 +147,10 @@ export default function reducer(statePart = initialState, action = {}) {
                 key: action.payload.key, 
                 direction: action.payload.direction,
              }
+      case ADD_TO_CART: 
+             const addedItem = action.payload;
+             addedItem.quantity += 1;
+             return {...statePart, cart: statePart.cart.concat(addedItem)}
       
       default:
       return statePart;

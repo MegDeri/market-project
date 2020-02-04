@@ -8,7 +8,7 @@ import './Product.scss';
 
 export class Product  extends React.Component  {
   render() {
-    const { id, name, price, picture, text, addFun } = this.props;
+    const { id, name, price, picture, addFun } = this.props;
       
     return (
       
