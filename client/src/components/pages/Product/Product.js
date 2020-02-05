@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 import Button from '../../common/Button/Button';
 import './Product.scss';
 
-export class Product  extends React.Component  {
+export class Product extends React.Component  {
   render() {
-    const { id, name, price, picture, addFun } = this.props;
+    const { id, name, price, picture } = this.props;
       
     return (
       

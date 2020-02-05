@@ -5,14 +5,15 @@ import { PropTypes } from 'prop-types';
 // import {addToCartAction} from '../../../redux/cart.actions';
 
 import  { Product } from './Product';
+
 //import  CartPage from '../../features/Cart/CartPage'
 import './Product.scss';
 
 export default class ProductsList extends React.Component {
   
-  handleAddClick = (item) => {
-    this.props.addToCartAction(item);
-  };
+  // handleAddClick = (item) => {
+  //   this.props.addToCartAction(item);
+  // };
   
   render() {
     const { products, addToCartAction, cart } = this.props;
@@ -21,7 +22,7 @@ export default class ProductsList extends React.Component {
       <div>
         {/* <CartPage cart={cart} /> */}
         <section className="product-list">
-          {products.map(product => <Product key={product.id} {...product}  addToCartAction={addToCartAction} addFun={this.handleAddClick.bind(this)}/>)}
+          {products.map(product => <Product key={product.id} {...product} /> )}
         </section>
       </div>
     );

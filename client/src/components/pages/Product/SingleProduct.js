@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+
 import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import Button from '../../common/Button/Button';
 import Spinner from '../../common/Spinner/Spinner';
@@ -32,8 +33,20 @@ class SingleProduct extends React.Component {
     loadProducts(match.params.id);
   }
 
+  handleAddToCart = () => {
+    const { products, cart, addToCart, addItemQuantity,  match } = this.props;
+    const isInCart = cart.filter(product => product.id === match.params.id);
+
+      if(isInCart.length === 0) {
+        addToCart(products);
+    } else {
+        addItemQuantity(match.params.id);
+    };
+
+  }
+
   render() {
-    const { products, request, id, name, price, picture, addFun } = this.props; 
+    const { products, request } = this.props; 
     const { onScale } = this;
 
     const textin =  request.pending ? ( 
@@ -62,7 +75,7 @@ class SingleProduct extends React.Component {
           </Col>
           <Col className="product-summary idTwo" xs={6}>
             <div className="textPro">{products[0].text}</div>
-            <Button variant="primary" onClick={() => addFun({id, name, price, picture, amount: 1})} >
+            <Button variant="primary" onClick={this.handleAddToCart} >
                 Add to cart
             </Button>
           </Col>
@@ -96,9 +109,13 @@ SingleProduct.propTypes = {
         picture: PropTypes.object.isRequired,
         price: PropTypes.number.isRequired,
         text: PropTypes.string.isRequired,
+        quantity: PropTypes.number.isRequired
     })
   ),
   loadProducts: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  addItemQuantity: PropTypes.func.isRequired,
+  cart: PropTypes.array.isRequired,
 };
 
 
