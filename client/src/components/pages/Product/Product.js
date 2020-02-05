@@ -6,12 +6,11 @@ import { Link } from 'react-router-dom';
 import Button from '../../common/Button/Button';
 import './Product.scss';
 
-export class Product  extends React.Component  {
+export class Product extends React.Component  {
   render() {
-    const { id, name, price, picture, addFun} = this.props;
+    const { id, name, price, picture } = this.props;
       
     return (
-      
         <Col className="product-summary" xs={6}>
           <Card>
             <CardBody>
@@ -20,10 +19,7 @@ export class Product  extends React.Component  {
             </CardBody>
             <CardImg src={picture.src} alt="pic" className="product-img"/>
             <Button variant="primary">
-              <Link to={`/product/${id}`}>Go to product!</Link>
-            </Button>
-            <Button variant="primary" onClick={() => addFun({id, name, price, picture, amount: 1})}>
-                  Add to cart
+              <Link to={`/product/${id}`}>Go to product!</Link> 
             </Button>
           </Card>
         </Col>
@@ -38,5 +34,4 @@ Product.propTypes = {
   picture: PropTypes.object,
   price: PropTypes.number,
   text: PropTypes.string,
-  model: PropTypes.string,
 };

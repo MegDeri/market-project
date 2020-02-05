@@ -1,11 +1,11 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+
 import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import Button from '../../common/Button/Button';
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
-import { Link } from 'react-router-dom';
 import './SingleProduct.scss';
 
 const styles = {
@@ -30,6 +30,18 @@ class SingleProduct extends React.Component {
   componentDidMount() {
     const { loadProducts, match } = this.props;
     loadProducts(match.params.id);
+  }
+
+  handleAddToCart = () => {
+    const { products, cart, addToCart, addItemQuantity,  match } = this.props;
+    const isInCart = cart.filter(product => product.id === match.params.id);
+
+      if(isInCart.length === 0) {
+        addToCart(products);
+    } else {
+        addItemQuantity(match.params.id);
+    };
+
   }
 
   render() {
@@ -62,6 +74,9 @@ class SingleProduct extends React.Component {
           </Col>
           <Col className="product-summary idTwo" xs={6}>
             <div className="textPro">{products[0].text}</div>
+            <Button variant="primary" onClick={this.handleAddToCart} >
+                Add to cart
+            </Button>
           </Col>
         </div>   
         
@@ -72,9 +87,7 @@ class SingleProduct extends React.Component {
         <Alert variant="error"> {request.error} </Alert>
       );
 
-     
-
-    return (
+      return (
       <div> 
         {textin} 
       </div>
@@ -86,16 +99,20 @@ class SingleProduct extends React.Component {
 SingleProduct.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        brand:PropTypes.string.isRequired,
-        model:PropTypes.string.isRequired,
-        picture: PropTypes.object.isRequired,
-        price: PropTypes.number.isRequired,
-        text: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      brand:PropTypes.string.isRequired,
+      model:PropTypes.string.isRequired,
+      picture: PropTypes.object.isRequired,
+      price: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      quantity: PropTypes.number.isRequired
     })
   ),
   loadProducts: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  addItemQuantity: PropTypes.func.isRequired,
+  cart: PropTypes.array.isRequired,
 };
 
 
