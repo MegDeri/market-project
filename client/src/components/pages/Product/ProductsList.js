@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {addToCartAction} from '../../../redux/cart.actions';
 
 import  { Product } from './Product';
-import  CartPage from '../../features/Cart/CartPage'
+import  CartPage from '../../features/Cart/CartContainer'
 import './Product.scss';
 
 class ProductsList extends React.Component {
