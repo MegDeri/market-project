@@ -10,6 +10,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/man1.jpeg'},
             price: 35,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -19,6 +20,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman2.jpeg'},
             price: 25,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -28,6 +30,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/man3.jpeg'},
             price: 155,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -37,6 +40,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman4.jpeg'},
             price: 18,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -46,6 +50,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/man5.jpeg'},
             price: 98,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -55,6 +60,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman6.jpeg'},
             price: 67,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -64,6 +70,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/man7.jpeg'},
             price: 42,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -73,6 +80,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman8.jpeg'},
             price: 29,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -82,6 +90,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/man9.jpeg'},
             price: 77,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -91,6 +100,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman10.jpeg'},
             price: 34,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -100,6 +110,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/woman11.jpg'},
             price: 33,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -109,6 +120,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/man12.jpg'},
             price: 27,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -118,6 +130,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/woman13.jpeg'},
             price: 81,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -127,6 +140,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman14.jpeg'},
             price: 26,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -136,6 +150,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/man15.jpeg'},
             price: 18,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -145,6 +160,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman16.jpeg'},
             price: 7,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -154,6 +170,7 @@ const loadTestData = async () => {
             model: 'woman',
             picture: { src: '../../../picture/woman17.jpeg'},
             price: 14,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -163,6 +180,7 @@ const loadTestData = async () => {
             model: 'man',
             picture: { src: '../../../picture/man18.jpeg'},
             price: 59,
+            quantity: 0,
             text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ante nunc, elementum eu justo id, accumsan mattis risus. Etiam bibendum risus eu enim ullamcorper, ac dapibus velit pulvinar. Phasellus ultrices ut odio aliquet elementum. Nunc at sem ac risus porta pharetra non id risus. Suspendisse et finibus urna, et eleifend purus. Sed rutrum purus non nisi venenatis blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         }
     ]
