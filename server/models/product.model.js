@@ -8,6 +8,7 @@ const Product = new Schema({
     model:{ type: 'String', required: true },
     picture:{type: 'Object', required: true},
     price: { type: 'Number', required: true },
+    quantity: { type: 'Number', required: true },
     text: { type: 'String', required: true },
 });
 
