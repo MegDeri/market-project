@@ -6,7 +6,6 @@ import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import Button from '../../common/Button/Button';
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
-import { Link } from 'react-router-dom';
 import './SingleProduct.scss';
 
 const styles = {
@@ -102,14 +101,14 @@ class SingleProduct extends React.Component {
 SingleProduct.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        brand:PropTypes.string.isRequired,
-        model:PropTypes.string.isRequired,
-        picture: PropTypes.object.isRequired,
-        price: PropTypes.number.isRequired,
-        text: PropTypes.string.isRequired,
-        quantity: PropTypes.number.isRequired
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      brand:PropTypes.string.isRequired,
+      model:PropTypes.string.isRequired,
+      picture: PropTypes.object.isRequired,
+      price: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      quantity: PropTypes.number.isRequired
     })
   ),
   loadProducts: PropTypes.func.isRequired,

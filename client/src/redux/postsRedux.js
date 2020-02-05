@@ -29,7 +29,8 @@ export const startRequest = () => ({ type: START_REQUEST});
 export const endRequest = () =>({type: END_REQUEST});
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
-export const addToCartAction = payload => ({payload, type: ADD_TO_CART });
+export const addToCart = payload => ({payload, type: ADD_TO_CART });
+export const addItemQuantity = id => ({ id, type: ADD_ITEM_QUANTITY });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const LOAD_SINGLE_PRODUCT = createActionName('LOAD_SINGLE_PRODUCT');
@@ -39,6 +40,7 @@ export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const SET_SORT_OPTIONS = createActionName('SET_SORT_OPTIONS');
 export const ADD_TO_CART = createActionName("ADD_TO_CART");
+export const ADD_ITEM_QUANTITY = createActionName("ADD_ITEM_QUANTITY");
 
 
 const initialState = {
@@ -151,6 +153,11 @@ export default function reducer(statePart = initialState, action = {}) {
              const addedItem = action.payload;
              addedItem.quantity += 1;
              return {...statePart, cart: statePart.cart.concat(addedItem)}
+      case ADD_ITEM_QUANTITY:
+             const quantityItem = statePart.cart.find(product => product.id === action.id)
+             quantityItem.quantity += 1;
+             const plusItem = statePart.cart.map( product => product.id === action.id ? quantityItem : product )
+             return {...statePart, cart: plusItem}
       
       default:
       return statePart;
