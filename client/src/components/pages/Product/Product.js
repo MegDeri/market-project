@@ -20,7 +20,7 @@ export class Product extends React.Component  {
             </CardBody>
             <CardImg src={picture.src} alt="pic" className="product-img"/>
             <Button variant="primary">
-              <Link to={`/product/${id}`}>Go to product!</Link>
+              <Link to={`/product/${id}`}>Go to product!</Link> 
             </Button>
             {/* <Button variant="primary" onClick={() => addFun({id, name, price, picture, amount: 1})} >
                   Add to cart
@@ -38,5 +38,5 @@ Product.propTypes = {
   picture: PropTypes.object,
   price: PropTypes.number,
   text: PropTypes.string,
-  model: PropTypes.string,
+  
 };

@@ -1,22 +1,35 @@
  import React from "react";
  import { Link } from 'react-router-dom';
 
-export default class CartItem extends React.Component {
-  render() {
-    const {id, name, price, amount, picture } = this.props;
+ import CountingItemsContainer from '../CountingItems/CountingItemsContainer'
+
+ import { Row, Col } from 'reactstrap';
+
+const CartItem = (props) => {
+ 
+    const {products, handleAddItemQuantity } = props;
     return (
-      <li className="flex items-center lh-copy pa3 ph0-l bb b--black-10">
-          <img className="w2 h2 w3-ns h3-ns br-100" src={picture.src} />
+      <Row >
+        <Col>
+        
+            <img  className="w2 h2 w3-ns h3-ns br-100" src={`${products.picture.src}`} alt='' />
+       
+          
           <div className="pl3 flex-auto">
-            <span className="f6 db black-70">{name}</span>
-            <span className="f6 db black-70">{price}</span>
+            <span className="f6 db black-70">{products.name}</span>
+            <span className="f6 db black-70">{products.price}</span>
           </div>
-          <div>
-           <span>Amount: {amount}</span>
-           <button>+</button>
-           <button>-</button>
-          </div>
-      </li>
+          </Col>
+          <Col xs='3' sm='3' md='2' lg='2' xl='2' className='counting-items-col'>
+                <CountingItemsContainer
+                  products={products}
+                  handleAddItemQuantity={handleAddItemQuantity}
+                />
+          </Col>
+          
+      </Row>
     )
-  }
+  
 } 
+
+export default CartItem;

@@ -1,19 +1,33 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-export default class Cart extends React.Component  {
+
+import Alert from '../../common/Alert/Alert';
+
+
+
+export class Cart extends React.Component  {
 
     render() {
        
       const { cart } = this.props;
-      console.log(cart)
       
+      if(cart.length !== 0) {
         return (
-            <ul className="list pl0 mt0 measure center">
+            <div className="list pl0 mt0 measure center">
                 {
-                  cart.map(c => <CartItem key={c.id} {...c} />)
+                  cart.map(item => 
+                    <CartItem 
+                    products={item}
+                    key={item.id} 
+                    />)
                 }
-            </ul>
+            </div>
         )
+      } else {
+        return <Alert variant='info'>Your shopping cart is empty!</Alert>
     }
+  }
 }
+
+export default Cart;
