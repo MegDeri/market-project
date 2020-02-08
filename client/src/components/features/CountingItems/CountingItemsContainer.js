@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getCart,  addItemQuantity} from '../../../redux/postsRedux';
+import { getCart,  addItemQuantity, removeItem } from '../../../redux/postsRedux';
 import CountingItems from './CountingItems';
 
 const mapStateToProps = state => ({
@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addItemQuantity: (id) => dispatch(addItemQuantity(id))
+  addItemQuantity: (id) => dispatch(addItemQuantity(id)),
+  removeItem: (id) => dispatch(removeItem(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountingItems);

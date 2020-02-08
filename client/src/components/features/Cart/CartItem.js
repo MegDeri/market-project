@@ -20,6 +20,7 @@ const CartItem = (props) => {
           <CountingItemsContainer
             products={products}
             handleAddItemQuantity={handleAddItemQuantity}
+            removeItem={handleRemoveItem}
           />
         </Col>
     </Row>

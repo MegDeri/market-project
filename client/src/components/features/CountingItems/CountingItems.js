@@ -12,6 +12,11 @@ handleAddItemQuantity = () => {
     
 }
 
+handleRemoveItem = () => {
+    const { products, removeItem } = this.props;
+
+}
+
     render() {
         const { products } = this.props;
         return (
@@ -21,7 +26,7 @@ handleAddItemQuantity = () => {
                     <div>{products.quantity}</div>
                     <Button variant='secondary' onClick={ this.handleAddItemQuantity }>+</Button>
                 </div>
-                <Button variant='danger'>Remove item</Button>
+                <Button variant='danger' onClick= {this.handleRemoveItem } >Remove item</Button>
             </div>
         );
     }
