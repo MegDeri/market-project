@@ -31,6 +31,7 @@ export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
 export const addToCart = payload => ({payload, type: ADD_TO_CART });
 export const addItemQuantity = id => ({ id, type: ADD_ITEM_QUANTITY });
+export const removeItem = id => ({id, type: REMOVE_ITEM });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const LOAD_SINGLE_PRODUCT = createActionName('LOAD_SINGLE_PRODUCT');
@@ -41,6 +42,7 @@ export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const SET_SORT_OPTIONS = createActionName('SET_SORT_OPTIONS');
 export const ADD_TO_CART = createActionName("ADD_TO_CART");
 export const ADD_ITEM_QUANTITY = createActionName("ADD_ITEM_QUANTITY");
+export const REMOVE_ITEM = createActionName("REMOVE_ITEM");
 
 
 const initialState = {
@@ -150,14 +152,18 @@ export default function reducer(statePart = initialState, action = {}) {
                 direction: action.payload.direction,
              }
       case ADD_TO_CART: 
-             const addedItem = action.payload;
-             addedItem.quantity += 1;
-             return {...statePart, cart: statePart.cart.concat(addedItem)}
+            const addedItem = action.payload;
+            addedItem.quantity += 1;
+            return {...statePart, cart: statePart.cart.concat(addedItem)}
       case ADD_ITEM_QUANTITY:
-             const quantityItem = statePart.cart.find(product => product.id === action.id)
-             quantityItem.quantity += 1;
-             const plusItem = statePart.cart.map( product => product.id === action.id ? quantityItem : product )
-             return {...statePart, cart: plusItem}
+            const quantityItem = statePart.cart.find(product => product.id === action.id)
+            quantityItem.quantity += 1;
+            const plusItem = statePart.cart.map( product => product.id === action.id ? quantityItem : product )
+            return {...statePart, cart: plusItem}
+      case REMOVE_ITEM: 
+             const remItem = statePart.cart.filter(product => product.id !== action.id)
+             return {...statePart, cart: remItem}
+              
       
       default:
       return statePart;
