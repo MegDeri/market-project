@@ -31,7 +31,7 @@ export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
 export const addToCart = payload => ({payload, type: ADD_TO_CART });
 export const addItemQuantity = id => ({ id, type: ADD_ITEM_QUANTITY });
-export const removeItem = id => ({id, type: REMOVE_ITEM });
+export const removeItem = payload => ({payload, type: REMOVE_ITEM });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const LOAD_SINGLE_PRODUCT = createActionName('LOAD_SINGLE_PRODUCT');
@@ -161,7 +161,7 @@ export default function reducer(statePart = initialState, action = {}) {
             const plusItem = statePart.cart.map( product => product.id === action.id ? quantityItem : product )
             return {...statePart, cart: plusItem}
       case REMOVE_ITEM: 
-             const remItem = statePart.cart.filter(product => product.id !== action.id)
+             const remItem = statePart.cart.filter(product => product.id !== action.payload)
              return {...statePart, cart: remItem}
               
       
