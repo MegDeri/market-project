@@ -12,9 +12,14 @@ handleAddItemQuantity = () => {
     
 }
 
+handleMinusItemQuantity = () => {
+    const { products, minusItemQuantity } = this.props;
+    minusItemQuantity(products.id);
+}
+
 handleRemoveItem = () => {
     const { products, removeItem } = this.props;
-
+    removeItem(products.id);
 }
 
     render() {
@@ -22,11 +27,11 @@ handleRemoveItem = () => {
         return (
             <div className='item-counter'>
                 <div className='item-counter-actions'>
-                    <Button variant='secondary'>–</Button>
+                    <Button variant='secondary' onClick={this.handleMinusItemQuantity}>–</Button>
                     <div>{products.quantity}</div>
-                    <Button variant='secondary' onClick={ this.handleAddItemQuantity }>+</Button>
+                    <Button variant='secondary' onClick={this.handleAddItemQuantity}>+</Button>
                 </div>
-                <Button variant='danger' onClick= {this.handleRemoveItem } >Remove item</Button>
+                <Button variant='danger' onClick={this.handleRemoveItem} >Remove item</Button>
             </div>
         );
     }

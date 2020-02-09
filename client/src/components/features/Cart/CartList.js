@@ -16,6 +16,7 @@ export class Cart extends React.Component  {
                 <CartItem 
                 products={item}
                 key={item.id} 
+                handleRemoveItem={this.handleRemoveItem}
               />)
             }
           </div>

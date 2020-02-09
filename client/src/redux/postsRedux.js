@@ -31,6 +31,7 @@ export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
 export const addToCart = payload => ({payload, type: ADD_TO_CART });
 export const addItemQuantity = id => ({ id, type: ADD_ITEM_QUANTITY });
+export const minusItemQuantity = id => ({ id, type: MINUS_ITEM_QUANTITY});
 export const removeItem = payload => ({payload, type: REMOVE_ITEM });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
@@ -42,6 +43,7 @@ export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const SET_SORT_OPTIONS = createActionName('SET_SORT_OPTIONS');
 export const ADD_TO_CART = createActionName("ADD_TO_CART");
 export const ADD_ITEM_QUANTITY = createActionName("ADD_ITEM_QUANTITY");
+export const MINUS_ITEM_QUANTITY = createActionName("MINUS_ITEM_QUANTITY");
 export const REMOVE_ITEM = createActionName("REMOVE_ITEM");
 
 
@@ -160,6 +162,11 @@ export default function reducer(statePart = initialState, action = {}) {
             quantityItem.quantity += 1;
             const plusItem = statePart.cart.map( product => product.id === action.id ? quantityItem : product )
             return {...statePart, cart: plusItem}
+      case MINUS_ITEM_QUANTITY:
+            const minusItem = statePart.cart.find(product => product.id === action.id)
+            minusItem.quantity -= 1;
+            const minusItem = statePart.cart.map(product => product.id === action.id ? minusItem : product)
+             return {...statePart, cart: minusItem}
       case REMOVE_ITEM: 
              const remItem = statePart.cart.filter(product => product.id !== action.payload)
              return {...statePart, cart: remItem}

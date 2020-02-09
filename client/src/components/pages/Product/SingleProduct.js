@@ -37,6 +37,7 @@ class SingleProduct extends React.Component {
     const isInCart = cart.filter(product => product.id === match.params.id);
 
       if(isInCart.length === 0) {
+        alert("Go to cart to see added item(s) or countinue shopping");
         addToCart(products);
     } else {
         addItemQuantity(match.params.id);

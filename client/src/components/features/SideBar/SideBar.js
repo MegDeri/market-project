@@ -29,7 +29,7 @@ import './SideBar.scss'
         </Row>
         <Row>
             <Col>
-              <Button onClick={() => handleOnClick('price', 'desc')}> Prices form highest </Button> 
+              <Button onClick={() => handleOnClick('price', 'desc')}> Prices from highest </Button> 
             </Col>
         </Row>
       </Container>
