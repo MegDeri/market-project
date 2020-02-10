@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getCart,  addItemQuantity, removeItem, minusItemQuantity } from '../../../redux/postsRedux';
+import { getCart, addItemQuantity, removeItem, minusItemQuantity } from '../../../redux/postsRedux';
 import CountingItems from './CountingItems';
 
 const mapStateToProps = state => ({

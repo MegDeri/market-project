@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Button from '../../common/Button/Button';
-
-//import './CountingItems.scss';
+import './CountingItems.scss';
 
 class CountingItems extends React.Component {
 
@@ -26,11 +25,9 @@ handleRemoveItem = () => {
         const { products } = this.props;
         return (
             <div className='item-counter'>
-                <div className='item-counter-actions'>
-                    <Button variant='secondary' onClick={this.handleMinusItemQuantity}>–</Button>
-                    <div>{products.quantity}</div>
-                    <Button variant='secondary' onClick={this.handleAddItemQuantity}>+</Button>
-                </div>
+                <Button variant='secondary' onClick={this.handleMinusItemQuantity}>–</Button>
+                <div className="countNo">{products.quantity}</div>
+                <Button variant='secondary' onClick={this.handleAddItemQuantity}>+</Button>                
                 <Button variant='danger' onClick={this.handleRemoveItem} >Remove item</Button>
             </div>
         );

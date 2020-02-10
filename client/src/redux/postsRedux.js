@@ -133,8 +133,10 @@ export default function reducer(statePart = initialState, action = {}) {
   switch (action.type) {
       case LOAD_PRODUCTS:
           return {...statePart, data: action.payload};
+      
       case LOAD_SINGLE_PRODUCT:
           return {...statePart, singleProduct: action.payload};
+
       case LOAD_PRODUCTS_PAGE:
           return {...statePart, 
             amount: action.payload.amount, 
@@ -142,34 +144,43 @@ export default function reducer(statePart = initialState, action = {}) {
             presentPage: action.payload.presentPage,
             data: [...action.payload.products]
          }
+
       case START_REQUEST:
           return {...statePart, request: {pending: true, success: null, error: null}};
+
       case END_REQUEST:
           return {...statePart, request: {pending: false, success: true, error: null}};
+
       case ERROR_REQUEST:
-          return {...statePart, request: {pending: false, success: false, error: action.error}}
+          return {...statePart, request: {pending: false, success: false, error: action.error}};
+
       case SET_SORT_OPTIONS:
-            return {...statePart,  
+            return {
+                ...statePart,  
                 key: action.payload.key, 
                 direction: action.payload.direction,
-             }
+            };
+
       case ADD_TO_CART: 
             const addedItem = action.payload;
-            addedItem.quantity += 1;
-            return {...statePart, cart: statePart.cart.concat(addedItem)}
+            
+            return {...statePart, cart: statePart.cart.concat(addedItem)};
+
       case ADD_ITEM_QUANTITY:
             const quantityItem = statePart.cart.find(product => product.id === action.id)
             quantityItem.quantity += 1;
             const plusItem = statePart.cart.map( product => product.id === action.id ? quantityItem : product )
-            return {...statePart, cart: plusItem}
+            return {...statePart, cart: plusItem};
+
       case MINUS_ITEM_QUANTITY:
-            const minusItem = statePart.cart.find(product => product.id === action.id)
-            minusItem.quantity -= 1;
-            const minusItem = statePart.cart.map(product => product.id === action.id ? minusItem : product)
-             return {...statePart, cart: minusItem}
+            const minusItemQ = statePart.cart.find(product => product.id === action.id)
+            minusItemQ.quantity -= 1;
+            const minusItem = statePart.cart.map(product => product.id === action.id ? minusItemQ : product)
+             return {...statePart, cart: minusItem};
+
       case REMOVE_ITEM: 
              const remItem = statePart.cart.filter(product => product.id !== action.payload)
-             return {...statePart, cart: remItem}
+             return {...statePart, cart: remItem};
               
       
       default:

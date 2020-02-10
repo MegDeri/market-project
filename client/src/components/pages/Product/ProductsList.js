@@ -7,7 +7,6 @@ export default class ProductsList extends React.Component {
   
   render() {
     const { products } = this.props;
-    console.log(this.props.cart)
     return (
       <div>
         <section className="product-list">

@@ -68,7 +68,7 @@ class SingleProduct extends React.Component {
               <Button variant="primary" >
                 <Link to={`/cart`}>Go to cart</Link>
               </Button>
-              <Button onClick={onScale} className="scaleBtn">
+              <Button variant="primary" onClick={onScale} className="scaleBtn">
                 Zoom product
               </Button>
             </Card>

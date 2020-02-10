@@ -9,21 +9,21 @@ const CartItem = (props) => {
   
   return (
     <Row >
-      <Col>
+      <Col className="flex items-center lh-copy pa3 ph0-l bb b--black-10">
         <img  className="w2 h2 w3-ns h3-ns br-100" src={`${products.picture.src}`} alt='' />
         <div className="pl3 flex-auto">
           <span className="f6 db black-70">{products.name}</span>
           <span className="f6 db black-70">€{products.price}</span>
         </div>
-        </Col>
-        <Col xs='3' sm='3' md='2' lg='2' xl='2' className='counting-items-col'>
+        <div className="flex items-center lh-copy pa3 ph0-l b--black-10">
           <CountingItemsContainer
-            products={products}
-            handleAddItemQuantity={handleAddItemQuantity}
-            handleMinusItemQuantity={handleMinusItemQuantity}
-            handleRemoveItem={handleRemoveItem}
-          />
-        </Col>
+              products={products}
+              handleAddItemQuantity={handleAddItemQuantity}
+              handleMinusItemQuantity={handleMinusItemQuantity}
+              handleRemoveItem={handleRemoveItem}
+            />
+        </div>
+      </Col>
     </Row>
     )
 } 
