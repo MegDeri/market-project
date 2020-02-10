@@ -12,8 +12,13 @@ handleAddItemQuantity = () => {
 }
 
 handleMinusItemQuantity = () => {
-    const { products, minusItemQuantity } = this.props;
-    minusItemQuantity(products.id);
+    const { products, minusItemQuantity, removeItem } = this.props;
+      if(products.quantity === 1) {
+        removeItem(products.id);
+    } else {
+        minusItemQuantity(products.id);
+    }
+   
 }
 
 handleRemoveItem = () => {
