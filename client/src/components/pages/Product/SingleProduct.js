@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter, Link } from "react-router-dom";
 
-import { Col, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Col, Card, CardImg, CardText, CardBody, CardTitle, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from '../../common/Button/Button';
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
@@ -16,9 +16,17 @@ class SingleProduct extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scale: 1
+      scale: 1,
+      modal: false,
     };
     this.onScale = this.onScale.bind(this);
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal,
+    })
   }
 
   onScale() {
@@ -37,11 +45,12 @@ class SingleProduct extends React.Component {
     const isInCart = cart.filter(product => product.id === match.params.id);
 
       if(isInCart.length === 0) {
-        alert("Go to cart to see added item(s) or countinue shopping");
         addToCart(products);
     } else {
         addItemQuantity(match.params.id);
     };
+    
+    this.toggle();
 
   }
 
@@ -54,30 +63,40 @@ class SingleProduct extends React.Component {
       ) : request.success ? ( 
          products.length > 0 ? (
         <div className="fullCol">
-          <Col className="product-summary idTwo" xs={6}>
+          <Col className="idTwo" xs={6}>
             <Card >
-              <CardBody>
+              <CardBody className="card-single">
                 <CardTitle>{products[0].name}</CardTitle>
                 <CardText>€{products[0].price}</CardText>
               </CardBody>
               <CardImg 
                 src={products[0].picture.src} 
-                alt="pic" className="product-img"
+                alt="pic" 
+                className="img-single"
                 style={{ ...styles, transform: "scale(" + this.state.scale + ")" }}
               />
-              <Button variant="primary" >
-                <Link to={`/cart`}>Go to cart</Link>
-              </Button>
               <Button variant="primary" onClick={onScale} className="scaleBtn">
                 Zoom product
               </Button>
             </Card>
           </Col>
-          <Col className="product-summary idTwo" xs={6}>
+          <Col className="idTwo" xs={6}>
             <div className="textPro">{products[0].text}</div>
             <Button variant="primary" onClick={this.handleAddToCart} >
                 Add to cart
             </Button>
+            <Modal isOpen={this.state.modal} toggle={this.toggle}>
+              <ModalHeader toggle={this.toggle}>Item(s) added to the cart!</ModalHeader>
+                  <ModalBody>
+                     Your item is in the cart, to see, click button below or continue shopping!
+                  </ModalBody>
+              <ModalFooter>
+                  <Button variant="primary" onClick={this.toggle}>
+                    <Link to={`/cart`}>Go to cart</Link>
+                  </Button>{' '}
+                  <Button variant="primary" onClick={this.toggle}>Close</Button>
+              </ModalFooter>
+            </Modal>
           </Col>
         </div>   
         
