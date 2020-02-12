@@ -3,7 +3,6 @@ import { getRequest,
         loadSingleProductRequest, 
         getSingleProduct, 
         getCart, 
-        addDiscountCode, 
         addItemQuantity, 
         addToCart, 
         sumItemPrice } from '../../../redux/postsRedux';
@@ -20,7 +19,6 @@ const mapDispatchToProps = dispatch => ({
   addToCart: (payload) => dispatch(addToCart(payload)),
   addItemQuantity: (id) => dispatch(addItemQuantity(id)),
   sumItemPrice: () => dispatch(sumItemPrice()),
-  addDiscountCode: () => dispatch(addDiscountCode()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);

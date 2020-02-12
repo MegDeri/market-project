@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
-import { getCart, addItemQuantity, minusItemQuantity, removeItem, addDiscountCode } from '../../../redux/postsRedux';
+import { getCart, addItemQuantity, minusItemQuantity, removeItem, addDiscountCode, sumItemPrice, getDiscountStatus, getTotalPrice } from '../../../redux/postsRedux';
 import Cart from './CartList';
 
 const mapStateToProps = state => ({
     cart: getCart(state),
+    price: getTotalPrice(state),
+    discountStatus: getDiscountStatus(state),
 });
 
 const mapDispatchToProps = dispatch => ({

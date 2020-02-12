@@ -20,6 +20,9 @@ export const getProductsSort = ({ products }) => {
      });
      return sortedProducts;
  };
+export const getTotalPrice = ({ products }) => products.totalPrice;
+export const getDiscountStatus = ({ products }) => products.discountStatus;
+
 
 /* ACTIONS */
 export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });

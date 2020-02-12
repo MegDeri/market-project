@@ -4,24 +4,24 @@ import CartItem from './CartItem';
 
 import Alert from '../../common/Alert/Alert';
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
-import { Container, Row } from 'reactstrap';
+import { Container } from 'reactstrap';
 import TotalPrice from '../CountingItems/TotalPrice/TotalPrice';
 
 export class Cart extends React.Component  {
   
   handleAddDiscount = () => {
     const { sumItemPrice, addDiscountCode } = this.props;
+    addDiscountCode();
     sumItemPrice();
 }
-
     render() {
-      const { cart, price } = this.props;
+      const { cart, price, discountStatus } = this.props;
 
-   
-      
       if(cart.length !== 0) {
         return (
+         
           <Container className="list pl0 mt0 measure center">
+             
             {
               cart.map(item => 
                 <CartItem 
@@ -30,18 +30,15 @@ export class Cart extends React.Component  {
                 handleRemoveItem={this.handleRemoveItem}
               />)
             }
-        
-          <Row className='order-total'>
-
+        <div className="order-total">
+          <SmallTitle>Total: €{price}</SmallTitle>
           <TotalPrice
+              discountStatus={discountStatus}
               handleAddDiscount={this.handleAddDiscount}
-          /> 
-
-          <SmallTitle>Total: £{price.toFixed(2)}</SmallTitle>
+          />
+        </div>
+         
           
-          
-          
-      </Row>
       </Container>
         )
       } else {

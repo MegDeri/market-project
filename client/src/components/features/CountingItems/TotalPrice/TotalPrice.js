@@ -24,7 +24,7 @@ class TotalPrice extends React.Component {
 
     handleSubmit = () => {
         const { handleAddDiscount, discountStatus } = this.props;
-        const discountCode = 'coscrafts';
+        const discountCode = 'mountain';
 
         if(discountStatus === false) {
             if(discountCode === this.state.input) {
@@ -46,7 +46,7 @@ class TotalPrice extends React.Component {
         if(discountStatus === false && isDiscountCorrect === true) {
             return(
                 <div className='discount-code'>
-                    <Label>Enter 'coscrafts' to get a 10% discount for your first order!</Label>
+                    <Label>Type code 'mountain' below and get 10% discount</Label>
                     <div className='discount-code-input'>
                         <Input placeholder='discount code' type='text' input={ input } onChange={ handleChange }></Input>
                         <Button variant='primary' onClick={ handleSubmit }>Continue</Button>
@@ -64,7 +64,7 @@ class TotalPrice extends React.Component {
                 <Alert variant='success'>The code is active</Alert>
             );
         } else {
-            return <Alert variant='error'>Cos zawiodlo</Alert>
+            return <Alert variant='error'>Something goes wrong!</Alert>
         }
         
     }
