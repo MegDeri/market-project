@@ -3,6 +3,7 @@
 .pagination {
   margin: 0 auto;
   text-align: center;
+  display: block;
 
   &__list {
     display: flex;
@@ -28,7 +29,7 @@
       }
 
       &--active {
-        color: $color-primary;
+        color: $color-link;
       }
     }
 
