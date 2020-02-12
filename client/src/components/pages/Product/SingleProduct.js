@@ -86,13 +86,13 @@ class SingleProduct extends React.Component {
                 Add to cart
             </Button>
             <Modal isOpen={this.state.modal} toggle={this.toggle}>
-              <ModalHeader toggle={this.toggle}>Item(s) added to the cart!</ModalHeader>
+              <ModalHeader  className="link-btn" toggle={this.toggle}>Item(s) added to the cart!</ModalHeader>
                   <ModalBody>
                      Your item is in the cart, to see, click button below or continue shopping!
                   </ModalBody>
               <ModalFooter>
                   <Button variant="primary" onClick={this.toggle}>
-                    <Link to={`/cart`}>Go to cart</Link>
+                    <Link className='link-btn' to={`/cart`}>Go to cart</Link>
                   </Button>{' '}
                   <Button variant="primary" onClick={this.toggle}>Close</Button>
               </ModalFooter>

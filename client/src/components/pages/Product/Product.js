@@ -19,7 +19,7 @@ export class Product extends React.Component  {
             </CardBody>
             <CardImg src={picture.src} alt="pic" className="product-img"/>
             <Button variant="primary">
-              <Link to={`/product/${id}`}>Go to product!</Link> 
+              <Link className='link-btn' to={`/product/${id}`}>Go to product!</Link> 
             </Button>
           </Card>
         </Col>
