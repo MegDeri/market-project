@@ -1,5 +1,12 @@
 import { connect } from 'react-redux';
-import { getRequest, loadSingleProductRequest, getSingleProduct, getCart,  addItemQuantity, addToCart } from '../../../redux/postsRedux';
+import { getRequest, 
+        loadSingleProductRequest, 
+        getSingleProduct, 
+        getCart, 
+        addDiscountCode, 
+        addItemQuantity, 
+        addToCart, 
+        sumItemPrice } from '../../../redux/postsRedux';
 import SingleProduct from './SingleProduct';
 
 const mapStateToProps = state => ({
@@ -11,7 +18,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   loadProducts: (id) => dispatch(loadSingleProductRequest(id)),
   addToCart: (payload) => dispatch(addToCart(payload)),
-  addItemQuantity: (id) => dispatch(addItemQuantity(id))
+  addItemQuantity: (id) => dispatch(addItemQuantity(id)),
+  sumItemPrice: () => dispatch(sumItemPrice()),
+  addDiscountCode: () => dispatch(addDiscountCode()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);

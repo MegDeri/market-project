@@ -33,6 +33,9 @@ export const addToCart = payload => ({payload, type: ADD_TO_CART });
 export const addItemQuantity = id => ({ id, type: ADD_ITEM_QUANTITY });
 export const minusItemQuantity = id => ({ id, type: MINUS_ITEM_QUANTITY});
 export const removeItem = payload => ({payload, type: REMOVE_ITEM });
+export const sumItemPrice = () => ({ type: SUM_ITEM_PRICE});
+export const sumItemQuantity = () => ({ type: SUM_ITEM_QUANTITY});
+export const addDiscountCode = () => ({ type: ADD_DISCOUNT_CODE });
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const LOAD_SINGLE_PRODUCT = createActionName('LOAD_SINGLE_PRODUCT');
@@ -45,6 +48,12 @@ export const ADD_TO_CART = createActionName("ADD_TO_CART");
 export const ADD_ITEM_QUANTITY = createActionName("ADD_ITEM_QUANTITY");
 export const MINUS_ITEM_QUANTITY = createActionName("MINUS_ITEM_QUANTITY");
 export const REMOVE_ITEM = createActionName("REMOVE_ITEM");
+export const SUM_ITEM_PRICE = createActionName("SUM_ITEM_PRICE");
+export const SUM_ITEM_QUANTITY = createActionName("SUM_ITEM_QUANTITY");
+export const ADD_DISCOUNT_CODE = createActionName('ADD_DISCOUNT_CODE');
+
+
+
 
 
 const initialState = {
@@ -62,6 +71,10 @@ const initialState = {
     productsPerPage: 6,
     presentPage: 1,
     cart: [],
+    totalPrice: 0,
+    sumQuantity: 0,
+    discount: 1,
+    discountStatus: false,
 };
 
 /* THUNKS */
@@ -181,7 +194,32 @@ export default function reducer(statePart = initialState, action = {}) {
       case REMOVE_ITEM: 
              const remItem = statePart.cart.filter(product => product.id !== action.payload)
              return {...statePart, cart: remItem};
-              
+
+       case ADD_DISCOUNT_CODE:
+
+            return {
+                ...statePart,
+                discount: 0.9,
+                discountStatus: true,
+            }
+
+      case SUM_ITEM_PRICE: 
+            let roundedPrice;
+
+            if(statePart.cart.length !== 0) {
+                let itemsTotalPrice = statePart.cart.map(cartItem => cartItem.item ? cartItem.price * cartItem.quantity : cartItem.price * cartItem.quantity);
+                itemsTotalPrice = itemsTotalPrice.reduce((previousPrice, newPrice) => previousPrice + newPrice);
+                const totalPriceWithDiscount = statePart.discountStatus ? itemsTotalPrice * statePart.discount : itemsTotalPrice;
+                roundedPrice = parseFloat(totalPriceWithDiscount.toFixed(2));
+
+            } else {
+                roundedPrice = 0;
+            }
+
+            return {
+                ...statePart,
+                totalPrice: roundedPrice,
+            }
       
       default:
       return statePart;
