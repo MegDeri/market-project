@@ -1,0 +1,21 @@
+@import '../../../../styles/settings.scss';
+
+.order-total {
+    margin-left: 50%;
+}
+.small-title {
+    margin-top: $base-size * 2;
+}
+
+.discount-code {
+    margin-top: $base-size;
+
+    .discount-code-input {
+    display: flex;
+
+        input {
+           width: $high-size;
+           margin-right: $base-size;
+        }
+    }
+}

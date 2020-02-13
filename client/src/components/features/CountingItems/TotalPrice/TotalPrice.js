@@ -4,7 +4,7 @@ import { Label, Input } from 'reactstrap';
 import Button from '../../../common/Button/Button';
 import Alert from '../../../common/Alert/Alert';
 
-//import './CheckDiscountCode.scss';
+import './TotalPrice.scss';
 
 class TotalPrice extends React.Component {
     

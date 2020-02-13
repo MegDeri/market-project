@@ -210,7 +210,7 @@ export default function reducer(statePart = initialState, action = {}) {
             let roundedPrice;
 
             if(statePart.cart.length !== 0) {
-                let itemsTotalPrice = statePart.cart.map(cartItem => cartItem.item ? cartItem.price * cartItem.quantity : cartItem.price * cartItem.quantity);
+                let itemsTotalPrice = statePart.cart.map(cartItem => cartItem.product ? cartItem.price * cartItem.quantity : cartItem.price * cartItem.quantity);
                 itemsTotalPrice = itemsTotalPrice.reduce((previousPrice, newPrice) => previousPrice + newPrice);
                 const totalPriceWithDiscount = statePart.discountStatus ? itemsTotalPrice * statePart.discount : itemsTotalPrice;
                 roundedPrice = parseFloat(totalPriceWithDiscount.toFixed(2));
