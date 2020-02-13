@@ -6,26 +6,29 @@ import './CountingItems.scss';
 class CountingItems extends React.Component {
 
 handleAddItemQuantity = () => {
-    const { products, addItemQuantity, sumItemPrice } = this.props;
+    const { products, addItemQuantity, sumItemPrice, sumItemQuantity, quantity } = this.props;
     addItemQuantity(products.id);
     sumItemPrice();
+    sumItemQuantity(quantity);
     
 }
 
 handleMinusItemQuantity = () => {
-    const { products, minusItemQuantity, removeItem, sumItemPrice } = this.props;
+    const { products, minusItemQuantity, removeItem, sumItemPrice, sumItemQuantity, quantity } = this.props;
       if(products.quantity === 1) {
         removeItem(products.id);
     } else {
         minusItemQuantity(products.id);
     }
     sumItemPrice();
+    sumItemQuantity(quantity);
 }
 
 handleRemoveItem = () => {
-    const { products, removeItem, sumItemPrice } = this.props;
+    const { products, removeItem, sumItemPrice, sumItemQuantity, quantity } = this.props;
     removeItem(products.id);
     sumItemPrice();
+    sumItemQuantity(quantity);
 }
 
     render() {

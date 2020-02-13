@@ -22,6 +22,7 @@ export const getProductsSort = ({ products }) => {
  };
 export const getTotalPrice = ({ products }) => products.totalPrice;
 export const getDiscountStatus = ({ products }) => products.discountStatus;
+export const getTotalQuantity = ({products}) => products.totalQuantity;
 
 
 /* ACTIONS */
@@ -56,9 +57,6 @@ export const SUM_ITEM_QUANTITY = createActionName("SUM_ITEM_QUANTITY");
 export const ADD_DISCOUNT_CODE = createActionName('ADD_DISCOUNT_CODE');
 
 
-
-
-
 const initialState = {
     data: [],
     //info if products list is uploaded
@@ -75,7 +73,7 @@ const initialState = {
     presentPage: 1,
     cart: [],
     totalPrice: 0,
-    sumQuantity: 0,
+    totalQuantity: 1,
     discount: 1,
     discountStatus: false,
 };
@@ -223,6 +221,20 @@ export default function reducer(statePart = initialState, action = {}) {
                 ...statePart,
                 totalPrice: roundedPrice,
             }
+      case SUM_ITEM_QUANTITY:
+          let sumQuantity;
+          if(statePart.cart.length !== 0) {
+              let itemsTotalQuantity = statePart.cart.map(itemQuantity => itemQuantity.product ? itemQuantity.quantity : itemQuantity.quantity)
+              sumQuantity  = itemsTotalQuantity.reduce((prevQuan, newQuan) => prevQuan + newQuan)
+              
+            } else {
+            sumQuantity = 0;
+        }
+
+        return {
+            ...statePart,
+            totalQuantity: sumQuantity,
+        }
       
       default:
       return statePart;

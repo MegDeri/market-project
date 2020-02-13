@@ -10,12 +10,13 @@ import TotalPrice from '../CountingItems/TotalPrice/TotalPrice';
 export class Cart extends React.Component  {
   
   handleAddDiscount = () => {
-    const { sumItemPrice, addDiscountCode } = this.props;
+    const { sumItemPrice, addDiscountCode, sumItemQuantity, quantity } = this.props;
     addDiscountCode();
     sumItemPrice();
+    sumItemQuantity(quantity);
 }
     render() {
-      const { cart, price, discountStatus } = this.props;
+      const { cart, price, quantity, discountStatus } = this.props;
 
       if(cart.length !== 0) {
         return (
@@ -29,7 +30,7 @@ export class Cart extends React.Component  {
               />)
             }
             <div className="order-total">
-              <SmallTitle>Total: €{price}</SmallTitle>
+          <SmallTitle>Total: €{price} and items {quantity} </SmallTitle>
             <TotalPrice
                 discountStatus={discountStatus}
                 handleAddDiscount={this.handleAddDiscount}
