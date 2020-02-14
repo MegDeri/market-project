@@ -5,7 +5,9 @@ import { getRequest,
         getCart, 
         addItemQuantity, 
         addToCart, 
-        sumItemPrice } from '../../../redux/postsRedux';
+        sumItemPrice,
+        sumItemQuantity
+       } from '../../../redux/postsRedux';
 import SingleProduct from './SingleProduct';
 
 const mapStateToProps = state => ({
@@ -19,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
   addToCart: (payload) => dispatch(addToCart(payload)),
   addItemQuantity: (id) => dispatch(addItemQuantity(id)),
   sumItemPrice: () => dispatch(sumItemPrice()),
+  sumItemQuantity: () => dispatch(sumItemQuantity()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SingleProduct);

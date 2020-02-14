@@ -41,7 +41,7 @@ class SingleProduct extends React.Component {
   }
 
   handleAddToCart = () => {
-    const { products, cart, addToCart, addItemQuantity, sumItemPrice,  match } = this.props;
+    const { products, cart, addToCart, addItemQuantity, sumItemPrice, sumItemQuantity, match } = this.props;
     const isInCart = cart.filter(product => product.id === match.params.id);
 
       if(isInCart.length === 0) {
@@ -50,6 +50,7 @@ class SingleProduct extends React.Component {
         addItemQuantity(match.params.id);
     };
     sumItemPrice();
+    sumItemQuantity();
     this.toggle();
 
   }
