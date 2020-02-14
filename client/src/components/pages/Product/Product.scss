@@ -12,15 +12,6 @@
     cursor: pointer;
 }
 
-.product-summary:hover {
-    margin-left: -$base-size*2;
-    margin-top: -$base-size / 5;
-    border-radius: $radius;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    padding-left: $base-size * 1.5;
-    background-color: $color-background2;
-}
-
 section.product-list {
     display: flex;
     flex-wrap: wrap;

@@ -95,7 +95,11 @@ class SingleProduct extends React.Component {
                   <Button variant="primary" onClick={this.toggle}>
                     <Link className='link-btn' to={`/cart`}>Go to cart</Link>
                   </Button>{' '}
-                  <Button variant="primary" onClick={this.toggle}>Close</Button>
+                  <Button variant="primary" onClick={this.toggle}>
+                    <Link className='link-btn' to={`/`}>
+                      Continue shopping
+                    </Link>
+                  </Button>
               </ModalFooter>
             </Modal>
           </Col>
