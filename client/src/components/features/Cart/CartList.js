@@ -30,12 +30,12 @@ export class Cart extends React.Component  {
               />)
             }
             <div className="order-total">
-          <SmallTitle>Total price: €{price}  </SmallTitle>
-          <h4> {quantity} item(s) in the cart</h4>
-            <TotalPrice
+              <SmallTitle>Total price: €{price}  </SmallTitle>
+              <h4> {quantity} item(s) in the cart</h4>
+              <TotalPrice
                 discountStatus={discountStatus}
                 handleAddDiscount={this.handleAddDiscount}
-            />
+              />
             </div>
           </Container>
         )
