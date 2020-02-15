@@ -1,20 +1,27 @@
 @import '../../../styles/settings.scss';
 
 .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-transform: uppercase;
 }
 
-@media(max-width: 768px) {
+.navMain {
+  border-bottom: 1px solid $color-text-super-light;
+  margin-bottom: 20px;
+}
+
+@media(min-width: 426px) and (max-width: 768px){
   .navbar {
     justify-content: space-between;
     text-transform: capitalize;
   }
 }
 
-.navMain {
-    border-bottom: 1px solid $color-text-super-light;
-    margin-bottom: 20px;
+@media (max-width: 425px) {
+  .navbar {
+    flex-direction: column;
+    text-transform: uppercase;
+  }
 }

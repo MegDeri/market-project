@@ -30,3 +30,9 @@
 .link-btn {
     color: $color-link;
 }
+
+@media(max-width: 575px) {
+    .fullCol {
+         display: block; 
+    }
+}

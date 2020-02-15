@@ -11,7 +11,7 @@ import './SideBar.scss'
 
     return (
       <Container className="navbar-con">
-        <h3>Sort by:</h3>
+        <h4>Sort by:</h4>
         <Row>
             <Col>
               <Button onClick={() => handleOnClick('name', 'asc')}> Name A to Z </Button> 

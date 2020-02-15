@@ -1,24 +1,36 @@
 @import '../../../../styles/settings.scss';
 
 .order-total {
-    margin-left: 50%;
-    border-bottom: solid 2px $border-color;
-    border-right: solid 2px $border-color;
-    box-shadow: 1px 1px 1px $color-editor-border;
+  margin-left: 50%;
+  border-bottom: solid 2px $border-color;
+  border-right: solid 2px $border-color;
+  box-shadow: 1px 1px 1px $color-editor-border;
 }
 .small-title {
-    margin-top: $base-size * 2;
+  margin-top: $base-size * 2;
 }
 
 .discount-code {
-    margin-top: $base-size;
+  margin-top: $base-size;
 
-    .discount-code-input {
+  .discount-code-input {
     display: flex;
-
-        input {
-           width: $high-size;
-           margin-right: $base-size;
-        }
+    input {
+        width: $high-size;
+        margin-right: $base-size;
     }
+  }
+}
+
+@media(max-width: 425px) {
+  .order-total {
+    margin-top: 15px;
+    padding-left: 10px;
+    margin-left: 0;
+    border: solid 2px $border-color;
+    box-shadow: 1px 1px 1px $color-editor-border; 
+    & .small-title{
+        font-size: 26px;
+    }
+  }
 }

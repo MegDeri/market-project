@@ -12,10 +12,10 @@ export const Header = props => {
     <div className="navMain">
         <Container>
             <Row>
-                <Col xs={4}>
+                <Col xs={12} md={4}>
                     <Logo/>
                 </Col>
-                <Col xs={8}>
+                <Col xs={12} md={8}>
                     <NavBar />
                 </Col>
             </Row>

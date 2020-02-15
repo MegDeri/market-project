@@ -64,7 +64,7 @@ class SingleProduct extends React.Component {
       ) : request.success ? ( 
          products.length > 0 ? (
         <div className="fullCol">
-          <Col className="idTwo" xs={6}>
+          <Col className="idTwo" xs={12} md={6}>
             <Card >
               <CardBody className="card-single">
                 <CardTitle>{products[0].name}</CardTitle>
@@ -81,7 +81,7 @@ class SingleProduct extends React.Component {
               </Button>
             </Card>
           </Col>
-          <Col className="idTwo" xs={6}>
+          <Col className="idTwo" xs={12} md={6}>
             <div className="textPro">{products[0].text}</div>
             <Button variant="primary" onClick={this.handleAddToCart} >
                 Add to cart
