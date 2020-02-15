@@ -11,7 +11,7 @@ export class Product extends React.Component  {
     const { id, name, price, picture } = this.props;
       
     return (
-        <Col className="product-summary" xs={6}>
+        <Col className="product-summary" xs={6} >
           <Card>
             <CardBody>
               <CardTitle>{name}</CardTitle>

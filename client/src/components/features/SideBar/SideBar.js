@@ -10,7 +10,7 @@ import './SideBar.scss'
   };
 
     return (
-      <Container>
+      <Container className="navbar-con">
         <h3>Sort by:</h3>
         <Row>
             <Col>

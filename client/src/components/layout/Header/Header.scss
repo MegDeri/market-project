@@ -7,6 +7,13 @@
     text-transform: uppercase;
 }
 
+@media(max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    text-transform: capitalize;
+  }
+}
+
 .navMain {
     border-bottom: 1px solid $color-text-super-light;
     margin-bottom: 20px;

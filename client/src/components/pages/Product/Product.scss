@@ -8,7 +8,6 @@
     margin-bottom: $base-size;
     margin-left: -$base-size;
     margin-right: $base-size;
-    transition: .2s;
     cursor: pointer;
 }
 
@@ -24,4 +23,12 @@ section.product-list {
 
 .link-btn {
     color: $color-link;
+}
+
+@media(max-width: 768px) {
+    .product-summary {
+      margin-bottom: 0; 
+      margin-left: 0; 
+      margin-right: 0;
+    }
 }

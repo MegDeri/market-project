@@ -8,10 +8,10 @@ export class Home extends React.Component  {
       return (
         <Container>
           <Row>
-            <Col xs={3}>
+            <Col xs={3} md={2}>
                 <SideBarContainer />
             </Col>
-            <Col xs={9}>
+            <Col xs={9} md={10}>
                 <Products />
             </Col>
           </Row>

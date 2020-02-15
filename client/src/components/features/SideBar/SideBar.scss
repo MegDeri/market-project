@@ -12,3 +12,17 @@
     color: $color-link;
     background: none;
 }
+
+@media(max-width: 768px) {
+    .btn-secondary {
+        padding: 14px 5px;
+        font-size: 16px;
+    }
+    .navbar-con {
+        padding: 0;
+        h3 {
+        font-size: 22px;
+        }
+    }
+}
+
