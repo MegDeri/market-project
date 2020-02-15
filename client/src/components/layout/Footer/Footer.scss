@@ -2,10 +2,7 @@
 
 .footMain {
     background-color: $color-background2;
-    display: flex;
-    justify-content: space-between;
-    flex-shrink: 0;
-    padding-top: 1rem;
+    min-height: 50px;
 }
 
 p {

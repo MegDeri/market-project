@@ -4,7 +4,7 @@ import "./Footer.scss";
 export const Footer = props => {
     return (
       <div className="footMain">
-        <p>©2020 All Rights Reserved</p>
+        <p>©2020 All rights reserved by Magda Aderibigbe</p>
       </div>
     );
 };

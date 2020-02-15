@@ -4,5 +4,9 @@
   font-weight: bold;
   font-size: $base-size * 2;
   color: $color-text;
-  margin: $base-size / 2;
+  margin-left: 35px;
+}
+
+a.active {
+  border: none;
 }
