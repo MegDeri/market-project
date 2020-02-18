@@ -12,6 +12,8 @@ const app = express();
 //import routes
 const productRoutes = require("./routes/product.routes");
 
+app.use(helmet());
+app.use(cors());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

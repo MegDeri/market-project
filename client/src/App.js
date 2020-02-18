@@ -20,8 +20,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/"} component={Logo} />
-          <Route exact path={"/products"} component={Products} />
-          <Route exact path={"/products/:id"} component={SingleProductPage} />
+          <Route exact path={"/product"} component={Products} />
+          <Route exact path={"/product/:id"} component={SingleProductPage} />
           <Route exact path={"/faq"} component={Faq} />
           <Route exact path={"/contact"} component={ContactPage} />
           <Route exact path={"/cart"} component={CartPage} />
