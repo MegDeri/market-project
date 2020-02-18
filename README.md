@@ -17,21 +17,21 @@ Application contains: main website with all products, sub-website with  single p
 * Reactstrap
 
 ### Structure of the app:
-Front-end files are located in the ```client/src``` directory, built version in ```client/build```
-Back-end files are located in the server directory
-Database is hosted on MongoDB Atlas Cluster (data is also available in ```server/testData.js```)
+- Front-end files are located in the ```client/src``` directory, built version in ```client/build```
+- Back-end files are located in the server directory
+- Database is hosted on MongoDB Atlas Cluster (data is also available in ```server/testData.js```)
 
 ### Init project:
 Clone project and after cloning use command ```npm install```.
 
 All needed source files are in ```src/```.
 
-NPM Scripts
+# NPM Scripts:
 2 main scripts:
 
--build: built project in ```build/``` based on files from ```src/```.
+- build: built project in ```build/``` based on files from ```src/```.
 
--start: start project, watch on change and rebuilt after changes.
+- start: start project, watch on change and rebuilt after changes.
  
  # MongoDB(must be installed locally)
 -send data to local database: go to ```server/``` and  use command:```yarn start```
