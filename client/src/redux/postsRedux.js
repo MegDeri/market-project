@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "../config";
+import { API_URL, BASE_URL } from "../config";
 
 // action name creator
 const reducerName = "products";
@@ -90,7 +90,7 @@ export const loadProductsRequest = () => {
   return async dispatch => {
     dispatch(startRequest());
     try {
-      let res = await axios.get(`${API_URL}/products`);
+      let res = await axios.get(`${BASE_URL}${API_URL}/products`);
       dispatch(loadProducts(res.data));
       dispatch(endRequest());
     } catch (e) {
@@ -103,7 +103,7 @@ export const loadSingleProductRequest = id => {
   return async dispatch => {
     dispatch(startRequest());
     try {
-      let res = await axios.get(`${API_URL}/products/${id}`);
+      let res = await axios.get(`${BASE_URL}${API_URL}/products/${id}`);
       dispatch(loadSingleProduct(res.data));
       dispatch(endRequest());
     } catch (e) {
@@ -122,7 +122,7 @@ export const loadProductsByPageRequest = (page, productsPerPage) => {
       const limit = productsPerPage;
 
       let res = await axios.get(
-        `${API_URL}/products/range/${startAt}/${limit}`
+        `${BASE_URL}${API_URL}/products/range/${startAt}/${limit}`
       );
 
       const payload = {
