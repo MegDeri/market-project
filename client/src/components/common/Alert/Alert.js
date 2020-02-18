@@ -1,24 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Animated } from 'react-animated-css';
-import { MdInfoOutline, MdDone, MdErrorOutline } from 'react-icons/md';
+import React from "react";
+import PropTypes from "prop-types";
+import { Animated } from "react-animated-css";
+import { MdInfoOutline, MdDone, MdErrorOutline } from "react-icons/md";
 
-import './Alert.scss';
+import "./Alert.scss";
 
-const Alert = ({ variant = '', children, ...otherProps }) => {
-
+const Alert = ({ variant = "", children, ...otherProps }) => {
   const icon = () => {
-    switch(variant) {
-      case 'info':
-        return <MdInfoOutline />
-      case 'success':
-        return <MdDone />
-      case 'warning':
-        return <MdErrorOutline />
-      case 'error':
-        return <MdErrorOutline />
+    switch (variant) {
+      case "info":
+        return <MdInfoOutline />;
+      case "success":
+        return <MdDone />;
+      case "warning":
+        return <MdErrorOutline />;
+      case "error":
+        return <MdErrorOutline />;
       default:
-        return <MdInfoOutline />
+        return <MdInfoOutline />;
     }
   };
 
@@ -29,13 +28,12 @@ const Alert = ({ variant = '', children, ...otherProps }) => {
         <span className="alert__desc">{children}</span>
       </div>
     </Animated>
-  )
-
+  );
 };
 
 Alert.propTypes = {
   variant: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired
 };
 
 export default Alert;
