@@ -1,5 +1,6 @@
 # market-project
-### Final bootcamp project(version is not completed, yet....work in progress)
+## DEMO: https://market-project.herokuapp.com/
+### Final bootcamp project
 
 ### Description:
 Front-end application in React, Redux, connected to MongoDB.
@@ -18,7 +19,8 @@ NPM Scripts
 
 -start: start project, watch on change and rebuilt after changes.
  
-- to upload data to database go to server/ and  use command:```yarn start```
+ #MongoDB(must be installed locally)
+- to send data to local database go to server/ and  use command:```yarn start```
 
 ```Project tree:
 client/
