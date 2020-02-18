@@ -9,12 +9,12 @@ The app was created with ```create-react-app```.
 Application contains: main website with all products, sub-website with  single product and cart.
 
 ### Technologies used for the project:
-*Mongo.db (Mongoose)
-*Express
-*React (Redux, React Router)
-*Node.js
-*Webpack, Babel, Axios
-*Reactstrap
+* Mongo.db (Mongoose)
+* Express
+* React (Redux, React Router)
+* Node.js
+* Webpack, Babel, Axios
+* Reactstrap
 
 ### Structure of the app:
 Front-end files are located in the ```client/src``` directory, built version in ```client/build```
@@ -33,8 +33,8 @@ NPM Scripts
 
 -start: start project, watch on change and rebuilt after changes.
  
- #MongoDB(must be installed locally)
-- send data to local database: go to ```server/``` and  use command:```yarn start```
+ # MongoDB(must be installed locally)
+-send data to local database: go to ```server/``` and  use command:```yarn start```
 
 ```Project tree:
 client/
