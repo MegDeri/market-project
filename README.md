@@ -26,14 +26,14 @@ Clone project and after cloning use command ```npm install```.
 
 All needed source files are in ```src/```.
 
-# NPM Scripts:
+### NPM Scripts:
 2 main scripts:
 
 - build: built project in ```build/``` based on files from ```src/```.
 
 - start: start project, watch on change and rebuilt after changes.
  
- # MongoDB(must be installed locally)
+ ### MongoDB(must be installed locally)
 -send data to local database: go to ```server/``` and  use command:```yarn start```
 
 ```Project tree:
