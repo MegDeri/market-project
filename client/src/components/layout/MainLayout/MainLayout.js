@@ -7,7 +7,7 @@ import "./MainLayout.scss";
 export class MainLayout extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <PageContainer>
           <Header />
           <div className="main-box">{this.props.children}</div>

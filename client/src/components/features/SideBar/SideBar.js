@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
 import "./SideBar.scss";
 
 const SideBar = ({ setSortOptions }) => {
@@ -9,7 +9,7 @@ const SideBar = ({ setSortOptions }) => {
   };
 
   return (
-    <Container className="navbar-con">
+    <div className="navbar-con">
       <h4>Sort by:</h4>
       <Row>
         <Col>
@@ -43,7 +43,7 @@ const SideBar = ({ setSortOptions }) => {
           </Button>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 
