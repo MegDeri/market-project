@@ -1,38 +1,38 @@
-@import '../../../styles/settings.scss';
+@import "../../../styles/settings.scss";
 
 .fullCol {
-    display: flex;
+  display: flex;
 }
 
 .product-summary:hover:not() {
-    margin-left: 0;
-    margin-top: 0;
-    border-radius: $radius;
-    box-shadow: none;
-    padding-left: 0;
-    background-color: $color-background2;
+  margin-left: 0;
+  margin-top: 0;
+  border-radius: $radius;
+  box-shadow: none;
+  padding-left: 0;
+  background-color: $color-background2;
 }
 
 .textPro {
-    padding: 20px;
+  padding: 20px;
 }
 
 .card-single {
-    font-weight: bold;
-    font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .img-single {
-    height: auto;
-    width: 25em;
+  height: auto;
+  width: 25em;
 }
 
 .link-btn {
-    color: $color-link;
+  color: $color-link;
 }
 
-@media(max-width: 575px) {
-    .fullCol {
-         display: block; 
-    }
+@media (max-width: 575px) {
+  .fullCol {
+    display: block;
+  }
 }

@@ -1,34 +1,34 @@
-@import '../../../styles/settings.scss';
+@import "../../../styles/settings.scss";
 
 .product-summary {
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    padding: $base-size;
-    margin-bottom: $base-size;
-    margin-left: -$base-size;
-    margin-right: $base-size;
-    cursor: pointer;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: $base-size;
+  margin-bottom: $base-size;
+  margin-left: -$base-size;
+  margin-right: $base-size;
+  cursor: pointer;
 }
 
 section.product-list {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .product-img {
-    height: 280px;
-    width: 280px;
+  height: 280px;
+  width: 280px;
 }
 
 .link-btn {
-    color: $color-link;
+  color: $color-link;
 }
 
-@media(max-width: 768px) {
-    .product-summary {
-      margin-bottom: 0; 
-      margin-left: 0; 
-      margin-right: 0;
-    }
+@media (max-width: 768px) {
+  .product-summary {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

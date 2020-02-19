@@ -18,16 +18,16 @@ $color-warning: #f0932b;
 $color-warning-back: #d68529;
 $color-danger: #f0932b;
 $color-danger-back: #d68529;
-$color-error: #EA2027;
+$color-error: #ea2027;
 $color-error-back: #ff5d6c;
 
 $color-textfield-border: #ddd;
 $color-editor-border: #ccc;
 $color-editor-border-light: #ddd;
-$border-color: rgba(0,0,0,.1);
+$border-color: rgba(0, 0, 0, 0.1);
 
-$font-header: 'Source Sans Pro', sans-serif;
-$font-text: 'Source Sans Pro', sans-serif;
+$font-header: "Source Sans Pro", sans-serif;
+$font-text: "Source Sans Pro", sans-serif;
 
 $radius: 5px;
 $base-size: 14px;
@@ -35,7 +35,8 @@ $transition: all 0.5s;
 $high-size: 50%;
 
 @mixin p-el($element) {
-  &:#{$element}, &::#{$element} {
+  &:#{$element},
+  &::#{$element} {
     position: absolute;
     @content;
   }

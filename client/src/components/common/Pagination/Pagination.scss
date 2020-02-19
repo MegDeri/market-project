@@ -1,4 +1,4 @@
-@import '../../../styles/settings.scss';
+@import "../../../styles/settings.scss";
 
 .pagination {
   margin: 0 auto;
@@ -21,7 +21,7 @@
       align-items: center;
       cursor: pointer;
       border-radius: $radius;
-      transition: .2s;
+      transition: 0.2s;
       color: $color-text-light;
 
       &:hover {
@@ -32,6 +32,5 @@
         color: $color-link;
       }
     }
-
   }
 }

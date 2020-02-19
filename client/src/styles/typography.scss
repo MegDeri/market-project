@@ -1,13 +1,18 @@
-@import './settings.scss';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import "./settings.scss";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
 a {
   color: $color-text-light;
-  transition: .3s;
+  transition: 0.3s;
 
   &:hover {
     color: $color-text;

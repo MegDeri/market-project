@@ -1,4 +1,4 @@
-@import '../../../../styles/settings.scss';
+@import "../../../../styles/settings.scss";
 
 .order-total {
   margin-left: 50%;
@@ -16,21 +16,21 @@
   .discount-code-input {
     display: flex;
     input {
-        width: $high-size;
-        margin-right: $base-size;
+      width: $high-size;
+      margin-right: $base-size;
     }
   }
 }
 
-@media(max-width: 425px) {
+@media (max-width: 425px) {
   .order-total {
     margin-top: 15px;
     padding-left: 10px;
     margin-left: 0;
     border: solid 2px $border-color;
-    box-shadow: 1px 1px 1px $color-editor-border; 
-    & .small-title{
-        font-size: 26px;
+    box-shadow: 1px 1px 1px $color-editor-border;
+    & .small-title {
+      font-size: 26px;
     }
   }
 }

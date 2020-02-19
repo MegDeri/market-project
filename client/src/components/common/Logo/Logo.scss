@@ -1,4 +1,4 @@
-@import '../../../styles/settings.scss';
+@import "../../../styles/settings.scss";
 
 .logo {
   font-weight: bold;
@@ -11,7 +11,7 @@ a.active {
   border: none;
 }
 
-@media(max-width: 425px) {
+@media (max-width: 425px) {
   .logo {
     margin-left: 85px;
   }

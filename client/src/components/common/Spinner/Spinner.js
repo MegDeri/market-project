@@ -1,7 +1,7 @@
-import React from 'react';
-import { Animated } from 'react-animated-css';
+import React from "react";
+import { Animated } from "react-animated-css";
 
-import './Spinner.scss';
+import "./Spinner.scss";
 
 const Spinner = () => (
   <Animated animationIn="fadeIn" animationOut="fadeOut">

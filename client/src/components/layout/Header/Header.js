@@ -1,25 +1,25 @@
 import React from "react";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'reactstrap';
-import Logo from '../../common/Logo/Logo';
-import NavBar from '../../features/NavBar/NavBarContainer'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "reactstrap";
+import Logo from "../../common/Logo/Logo";
+import NavBar from "../../features/NavBar/NavBarContainer";
 
-import "./Header.scss"
+import "./Header.scss";
 
 export const Header = props => {
   return (
     <div className="navMain">
-        <Container>
-            <Row>
-                <Col xs={12} md={4}>
-                    <Logo/>
-                </Col>
-                <Col xs={12} md={8}>
-                    <NavBar />
-                </Col>
-            </Row>
-        </Container>
+      <Container>
+        <Row>
+          <Col xs={12} md={4}>
+            <Logo />
+          </Col>
+          <Col xs={12} md={8}>
+            <NavBar />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

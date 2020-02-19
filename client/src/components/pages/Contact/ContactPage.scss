@@ -1,22 +1,21 @@
-@import '../../../styles/settings.scss';
+@import "../../../styles/settings.scss";
 
-
-  .contact {
-    &__part {
-        display: block;
-        font-size: 18px;
-        text-transform: uppercase;
-        margin: 0;
-        padding: 0;
-        color: $color-text-light;
-    }
-
-    &__main {
-        text-transform: none;
-        font-size: 20px;
-        margin-left: 10px;
-        font-weight: 100;
-        margin-left: 15px;
-        color: $color-basic;
-    }
+.contact {
+  &__part {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    color: $color-text-light;
   }
+
+  &__main {
+    text-transform: none;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 100;
+    margin-left: 15px;
+    color: $color-basic;
+  }
+}

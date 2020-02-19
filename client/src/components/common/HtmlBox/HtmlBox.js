@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactHtmlParser from 'react-html-parser';
+import React from "react";
+import PropTypes from "prop-types";
+import ReactHtmlParser from "react-html-parser";
 
 const HtmlBox = ({ children, ...otherProps }) => (
   <p {...otherProps} className="html-box">
@@ -9,7 +9,7 @@ const HtmlBox = ({ children, ...otherProps }) => (
 );
 
 HtmlBox.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.string
 };
 
 export default HtmlBox;
