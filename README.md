@@ -4,7 +4,7 @@
 ### Final project for Web Developer Bootcamp
 
 ### Description:
-Front-end application in React, Redux, connected to MongoDB. 
+Full-stack application in React, Redux, connected to MongoDB. 
 The app was created with ```create-react-app```.
 Application contains: main website with all products, sub-website with  single product and cart.
 
