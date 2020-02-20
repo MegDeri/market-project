@@ -33,8 +33,8 @@ All needed source files are in ```src/```.
 
 - start: start project, watch on change and rebuilt after changes.
  
- ### MongoDB(must be installed locally)
--send data to local database: go to ```server/``` and  use command:```yarn start```
+ ### MongoDB
+--connected to external database MongoDB Atlas, do not need to have installed  db locally.
 
 ```Project tree:
 client/
